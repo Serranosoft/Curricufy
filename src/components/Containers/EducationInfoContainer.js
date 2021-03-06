@@ -65,10 +65,6 @@ class EducationInfoContainer extends Component {
                     finishStudy: ""
                 })
             })
-
-        } else {
-            //console.log(event);
-            
         }
     }
 

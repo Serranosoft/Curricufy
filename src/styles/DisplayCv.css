@@ -9,7 +9,7 @@
 #CvAvatar {
   max-width: 250px;
   max-height: 150px;
-  margin: 8px 0;
+  margin: 8px auto;
   border-radius: 50%;
 }
 

@@ -1,0 +1,16 @@
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    color: white;
+    
+}
+
+footer span {
+    padding-bottom: 8px;
+}

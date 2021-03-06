@@ -10,7 +10,7 @@ function GeneralInfoForm(props) {
             <img src={props.avatar === "" ? DefaultAvatar : props.avatar} className="profileImg" />
             <input type="file" className="handleFiles handleAvatar" onChange={props.handleAvatar}></input>
             <div className="f-b">
-                <h3><span className="highlight">Información general</span> sobre ti</h3>
+                <h3><span className="highlight">Información</span> general sobre ti</h3>
                 <div>
                     <img 
                         className="GridOptions" 
@@ -35,7 +35,6 @@ function GeneralInfoForm(props) {
 
                 <label>Nombre:
                     <input
-                        id="name" // esto sobra?
                         type="text"
                         value={props.name}
                         name="name"

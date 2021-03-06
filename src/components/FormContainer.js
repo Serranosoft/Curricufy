@@ -115,7 +115,6 @@ class FormContainer extends Component {
     render() {
         return (
             <div>
-                <h1>Vamos a crear un <span className="highlight">CV</span> moderno</h1>
                 <div id="cv_wrapper">
 
                     <GeneralInfoContainer

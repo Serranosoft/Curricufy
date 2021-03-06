@@ -1,11 +1,14 @@
 import React from "react";
+import '../styles/Footer.css';
+import icon from "../styles/images/favicon.png"
 
 function Footer() {
 
 
     return (
         <footer>
-            <h2>This is the footer</h2>
+            <img src={icon} className="logo"/>
+            <span>Diseñado por <a href="twitter.com/ImScholz">Manuel Scholz</a></span>
         </footer>
     )
 }

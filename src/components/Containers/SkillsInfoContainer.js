@@ -28,8 +28,6 @@ class SkillsInfoContainer extends Component {
                     this.props.updateSkillsState(this.state)
                     document.getElementById("skillsInfoForm").reset();
                 })
-            } else {
-                //this.handleError("skills")
             }
         }
     }

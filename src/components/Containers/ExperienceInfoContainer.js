@@ -45,9 +45,6 @@ class ExperienceInfoContainer extends Component {
                     workDescription: ""
                 })
             })
-
-        } else {
-            //this.handleError("works")
         }
     }
 

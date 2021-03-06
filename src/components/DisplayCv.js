@@ -1,13 +1,8 @@
 import React, { Component } from "react";
 import jsPDF from "jspdf";
 import domtoimage from "dom-to-image"
-/*
+import DefaultAvatar from "../styles/images/user.png"
 
-html2canvas para hacer una screenshot de un div en concreto
-jsPDF convierte esa screenshot en un pdf
-dom-to-image para hacer una screenshot de un div en concreto, alt de html2canvas
-
-*/
 class DisplayCv extends Component {
 
   constructor(props) {
@@ -204,18 +199,23 @@ class DisplayCv extends Component {
   render() {
     return (
       <div>
-        <div className="f-e">
-          <button id="downloadAsPdf" className="btn" onClick={this.printDocument}>DESCARGAR EN PDF</button>
-          <button id="downloadAsImg" className="btn" onClick={this.printDocument}>DESCARGAR EN IMAGEN</button>
-          <label>Elige un color para tu CV
-              <input type="color" value={this.state.color} onChange={this.handleColor} />
-          </label>
-        </div>
-
         <div className="sticky">
+          <div className="f-e">
+            <button id="downloadAsPdf" className="btn" onClick={this.printDocument}>DESCARGAR EN PDF</button>
+            <button id="downloadAsImg" className="btn" onClick={this.printDocument}>DESCARGAR EN IMAGEN</button>
+            <label>Elige un color para tu CV
+              <input type="color" value={this.state.color} onChange={this.handleColor} />
+            </label>
+          </div>
+
+
           <div id="displayWrapper">
             <div className="f-e" style={{ backgroundColor: `${this.state.color}`, flexDirection: this.props.data.generalColumn ? "column" : "row" }}>
-              <img src={this.props.data.avatar} id="CvAvatar" />
+              <img
+                src={this.props.data.avatar == undefined ||
+                  this.props.data.avatar == "" ?
+                  DefaultAvatar : this.props.data.avatar}
+                id="CvAvatar" />
               <div>
                 <p id="DisplayName">{this.props.data.name}</p>
                 <p id="DisplayEmail">{this.props.data.email}</p>
