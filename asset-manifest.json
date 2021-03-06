@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Curricufy/static/css/main.e85baf16.chunk.css",
+    "main.js": "/Curricufy/static/js/main.3cede0a0.chunk.js",
+    "main.js.map": "/Curricufy/static/js/main.3cede0a0.chunk.js.map",
+    "runtime-main.js": "/Curricufy/static/js/runtime-main.18f53780.js",
+    "runtime-main.js.map": "/Curricufy/static/js/runtime-main.18f53780.js.map",
+    "static/js/2.b8444b34.chunk.js": "/Curricufy/static/js/2.b8444b34.chunk.js",
+    "static/js/2.b8444b34.chunk.js.map": "/Curricufy/static/js/2.b8444b34.chunk.js.map",
+    "static/js/3.858bd347.chunk.js": "/Curricufy/static/js/3.858bd347.chunk.js",
+    "static/js/3.858bd347.chunk.js.map": "/Curricufy/static/js/3.858bd347.chunk.js.map",
+    "static/js/4.38a82535.chunk.js": "/Curricufy/static/js/4.38a82535.chunk.js",
+    "static/js/4.38a82535.chunk.js.map": "/Curricufy/static/js/4.38a82535.chunk.js.map",
+    "static/js/5.fb2e97a4.chunk.js": "/Curricufy/static/js/5.fb2e97a4.chunk.js",
+    "static/js/5.fb2e97a4.chunk.js.map": "/Curricufy/static/js/5.fb2e97a4.chunk.js.map",
+    "index.html": "/Curricufy/index.html",
+    "static/css/main.e85baf16.chunk.css.map": "/Curricufy/static/css/main.e85baf16.chunk.css.map",
+    "static/js/2.b8444b34.chunk.js.LICENSE.txt": "/Curricufy/static/js/2.b8444b34.chunk.js.LICENSE.txt",
+    "static/js/3.858bd347.chunk.js.LICENSE.txt": "/Curricufy/static/js/3.858bd347.chunk.js.LICENSE.txt",
+    "static/js/4.38a82535.chunk.js.LICENSE.txt": "/Curricufy/static/js/4.38a82535.chunk.js.LICENSE.txt",
+    "static/js/5.fb2e97a4.chunk.js.LICENSE.txt": "/Curricufy/static/js/5.fb2e97a4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.18f53780.js",
+    "static/js/3.858bd347.chunk.js",
+    "static/css/main.e85baf16.chunk.css",
+    "static/js/main.3cede0a0.chunk.js"
+  ]
+}
