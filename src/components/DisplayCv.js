@@ -42,7 +42,7 @@ class DisplayCv extends Component {
           .then(function (dataUrl) {
             const pdf = new jsPDF();
             pdf.addImage(dataUrl, 'PNG', 10, 0, -200, -200);
-            pdf.save("YourPrettyCV.pdf");
+            pdf.save("CV.pdf");
           });
         break;
       case "downloadAsImg":
@@ -58,7 +58,7 @@ class DisplayCv extends Component {
         })
           .then(function (dataUrl) {
             var link = document.createElement('a');
-            link.download = 'test.jpeg';
+            link.download = 'CV.jpeg';
             link.href = dataUrl;
             link.click();
           });
