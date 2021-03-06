@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: hsl(210, 9%, 9%);
+    align-items: center;
+    margin: 10px 0;
+}
+
+header h2 {
+    line-height: 0.7;
+    font-size: 32px;
+}
+
+header p {
+    margin-left: auto;
+    font-size: 12px;
+    align-self: flex-start;
+}
+
+header p a {
+    color: white;
+}

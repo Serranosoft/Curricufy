@@ -1,0 +1,51 @@
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select {
+  display: block;
+  width: 80%;
+  padding-right: 24px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: 3px solid #373c40;
+  outline: 0;
+}
+
+input[type="checkbox"] {
+  display: inline;
+  align-self: center;
+  margin: 0 8px;
+}
+
+input[type="color"] {
+  height: 30px;
+  width: 100px;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: white;
+}
+
+textarea {
+  width: 83%;
+  padding: 10px;
+  outline: none;
+  background: transparent;
+  resize: none;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 3px solid #373c40;
+}
+
+select {
+  width: 90%;
+  margin: 8px 0;
+}
+
+select option {
+  background-color: #151719;
+}
