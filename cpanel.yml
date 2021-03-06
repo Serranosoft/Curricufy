@@ -1,4 +1,4 @@
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/infoerro/manu-scholz.com/
+    - export DEPLOYPATH=/home/infoerro/curricufy.manu-scholz.com/
     - /bin/cp -R * $DEPLOYPATH
