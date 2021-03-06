@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/infoerro/manu-scholz.com/
+    - /bin/cp -R * $DEPLOYPATH
