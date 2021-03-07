@@ -6,6 +6,7 @@ import grid3Hover from "../../styles/images/grid3Hover.png";
 import grid1 from "../../styles/images/grid1.png";
 import grid2 from "../../styles/images/grid2.png";
 import grid3 from "../../styles/images/grid3.png";
+import moment from "moment";
 
 class EducationInfoContainer extends Component {
     constructor(props) {
@@ -55,7 +56,7 @@ class EducationInfoContainer extends Component {
             this.state.finishStudy
         ) {
             this.setState({
-                studies: [...this.state.studies, [this.state.school, this.state.title, this.state.dateStudy, this.state.finishStudy]]
+                studies: [...this.state.studies, [this.state.school, this.state.title, moment(this.state.dateStudy).format("DD / MM / YYYY"), this.state.finishStudy]]
             }, () => {
                 this.props.updateEducationState(this.state);
                 this.setState({

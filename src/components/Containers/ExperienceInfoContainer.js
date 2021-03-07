@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import ExperienceInfoForm from "../Form/ExperienceInfoForm"
+import ExperienceInfoForm from "../Form/ExperienceInfoForm";
+import moment from "moment";
 
 class ExperienceInfoContainer extends Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class ExperienceInfoContainer extends Component {
     }
 
     handleChange(event) {
-        const value = event.target.value
+        const value = event.target.value;
         this.setState({
             [event.target.name]: value
         })
@@ -34,7 +35,7 @@ class ExperienceInfoContainer extends Component {
             this.state.workDescription.length > 1
         ) {
             this.setState({
-                works: [...this.state.works, [this.state.companyName, this.state.companyPosition, this.state.startWorking, this.state.finishWorking, this.state.workDescription]]
+                works: [...this.state.works, [this.state.companyName, this.state.companyPosition, moment(this.state.startWorking).format("DD / MM / YYYY"), moment(this.state.finishWorking).format("DD / MM / YYYY"), this.state.workDescription]]
             }, () => {
                 this.props.updateExperienceState(this.state);
                 this.setState({

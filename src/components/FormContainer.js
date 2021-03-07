@@ -49,6 +49,10 @@ class FormContainer extends Component {
         this.updateExtraInfoState = this.updateExtraInfoState.bind(this)
     }
 
+    componentDidMount() {
+        this.props.onUpdate(this.state)
+    }
+
     updateGeneralState(data) {
         this.setState({
             avatar: data.avatar,
