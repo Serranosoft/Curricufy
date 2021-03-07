@@ -1,0 +1,34 @@
+#homeContainer {
+    width: 100%;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+#homeWrapper {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.exampleCv {
+    display: block;
+    width: 750px;
+    height: 500px;
+    margin: 24px auto;
+}
+
+.linkHome {
+    padding: 8px 32px;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    background-color: #5d5dff;
+    border-radius: 5px;
+}
+
+.linkHome:hover {
+    background-color: #6d6de3;
+}

@@ -115,7 +115,7 @@ class FormContainer extends Component {
     render() {
         return (
             <div>
-                <div id="cv_wrapper">
+                <div id="cv_wrapper" className="slide-in-elliptic-top-fwd">
 
                     <GeneralInfoContainer
                         updateGeneralState={this.updateGeneralState}

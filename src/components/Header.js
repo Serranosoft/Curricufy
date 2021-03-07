@@ -1,10 +1,11 @@
 import React from "react";
 import '../styles/Header.css';
-import logo from "../styles/images/logo.png"
+import '../styles/Animations.css'
+
 function Header() {
     return (
         <header>
-            <img src={logo} className="logo"/>
+            <h1 className="text-shadow-pop-bottom">Curricu<span style={{color: "#5d5dff"}}>fy</span></h1>
         </header>
     )
 }

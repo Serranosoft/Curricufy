@@ -9,7 +9,7 @@ class DisplayCv extends Component {
     super(props);
 
     this.state = {
-      color: "#a75685"
+      color: "#5d5dff"
     }
 
     this.printDocument = this.printDocument.bind(this);
@@ -199,7 +199,7 @@ class DisplayCv extends Component {
   render() {
     return (
       <div>
-        <div className="sticky">
+        <div className="sticky bounce-in-top" style={{animationDelay:"0.8s"}}>
           <div className="f-e">
             <button id="downloadAsPdf" className="btn" onClick={this.printDocument}>DESCARGAR EN PDF</button>
             <button id="downloadAsImg" className="btn" onClick={this.printDocument}>DESCARGAR EN IMAGEN</button>

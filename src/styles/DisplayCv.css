@@ -1,6 +1,7 @@
 #displayWrapper {
   width: 650px;
   max-width: 650px;
+  min-height: 650px;
   text-align: center;
   background: white;
   color: black;

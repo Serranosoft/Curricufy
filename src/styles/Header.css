@@ -3,8 +3,16 @@ header {
     flex-direction: column;
     background-color: hsl(210, 9%, 9%);
     align-items: center;
+    margin: 8px 0;
 }
 
 header a {
     color: white;
+}
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 62px;
+    font-weight: normal;
+    margin: 8px 0;
 }
