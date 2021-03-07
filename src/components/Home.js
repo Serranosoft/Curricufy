@@ -11,7 +11,7 @@ function Home() {
         <div id="homeContainer">
             <Header />
             <div id="homeWrapper">
-                <h1>Construye fácilmente un CV bonito y moderno</h1>
+                <h1>Construye y personaliza un CV moderno y fácil en unos pocos minutos</h1>
                 <Link to="/crear" className="linkHome">Crear Cv</Link>
                 <img
                     src={exampleCv}
