@@ -87,7 +87,7 @@ function EducationInfoForm(props) {
                     <button
                         className="btn add"
                         value="Reset Studies"
-                        onClick={props.deleteStudies}> Eliminar Estudios
+                        onClick={props.resetStudies}> Eliminar Estudio
                     </button>
                 </div>
 

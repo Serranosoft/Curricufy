@@ -45,8 +45,10 @@ class LangInfoContainer extends Component{
     
     resetLang(e) {
         e.preventDefault();
-        this.setState({
-            langs: []
+        this.setState(prevState => {
+            return {
+                langs: prevState.langs.slice(0,-1)
+            }
         }, () => {
             this.props.updateLangState(this.state);
         })

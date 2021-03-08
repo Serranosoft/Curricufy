@@ -71,8 +71,10 @@ class EducationInfoContainer extends Component {
 
     resetStudies(e) {
         e.preventDefault();
-        this.setState({
-            studies: []
+        this.setState(prevState => {
+            return {
+                studies: prevState.studies.slice(0, -1)
+            }
         }, () => {
             this.props.updateEducationState(this.state);
         })
@@ -133,7 +135,7 @@ class EducationInfoContainer extends Component {
             <EducationInfoForm
                 handleChange={this.handleChange}
                 addStudies={this.addStudies}
-                deleteStudies={this.resetStudies}
+                resetStudies={this.resetStudies}
                 handleColumns={this.handleColumns}
                 hoverColumns={this.hoverColumns}
                 unHoverColumns={this.unHoverColumns}

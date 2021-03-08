@@ -35,8 +35,10 @@ class ExtraInfoContainer extends Component {
 
     resetExtraInfo(e) {
         e.preventDefault();
-        this.setState({
-            extraInfo: []
+        this.setState(prevState => {
+            return {
+                extraInfo: prevState.extraInfo.slice(0,-1)
+            }
         }, () => {
             this.props.updateExtraInfoState(this.state)
         })

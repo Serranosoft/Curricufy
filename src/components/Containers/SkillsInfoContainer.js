@@ -3,7 +3,6 @@ import SkillsInfoForm from "../Form/SkillsInfoForm";
 import RoundImg from "../../styles/images/round.png"
 import RoundImgActive from "../../styles/images/roundActive.png"
 
-
 class SkillsInfoContainer extends Component {
     constructor(props) {
         super(props)
@@ -33,7 +32,7 @@ class SkillsInfoContainer extends Component {
                     document.getElementById("skillsInfoForm").reset();
                 })
             } else {
-                document.getElementById("skillsError").innerHTML = "Solo puedes agregar hasta 7 logos"
+                document.getElementById("skillsError").innerHTML = "Solo puedes agregar hasta 7 habilidades"
             }
         }
     }

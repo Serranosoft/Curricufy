@@ -38,7 +38,7 @@ function LangInfoForm(props) {
                 </button>
                     <button
                         className="btn"
-                        onClick={props.resetLang}>Eliminar Idiomas
+                        onClick={props.resetLang}>Eliminar Idioma
                 </button>
                 </div>
 

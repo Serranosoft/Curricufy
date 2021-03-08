@@ -51,8 +51,10 @@ class ExperienceInfoContainer extends Component {
 
     resetWorks(e) {
         e.preventDefault();
-        this.setState({
-            works: []
+        this.setState(prevState => {
+            return {
+                works: prevState.works.slice(0,-1)
+            }
         }, () => {
             this.props.updateExperienceState(this.state);
         })

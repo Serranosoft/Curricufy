@@ -65,7 +65,7 @@ function ExperienceInfoForm(props) {
 
                     <button
                         className="btn add"
-                        onClick={props.resetWorks}>Eliminar trabajos
+                        onClick={props.resetWorks}>Eliminar trabajo
                     </button>
                 </div>
             </form>
