@@ -7,19 +7,21 @@ function SkillsInfoForm(props) {
         <div>
             <div className="f-b">
                 <h3>Añade unos logos para <span className="highlight">tus habilidades</span></h3>
-                <img 
-                        className="GridOptions" 
-                        id="roundImg" 
-                        src={RoundImg} 
-                        onClick={props.handleRound}
-                    />
+                <img
+                    className="GridOptions"
+                    id="roundImg"
+                    src={RoundImg}
+                    onClick={props.handleRound}
+                />
             </div>
+            <span className="ErrorInput" id="skillsError"></span>
             <form className="f-a" id="skillsInfoForm">
-            
-                <input 
+
+                <input
                     type="file"
-                    className="handleFiles" 
-                    ref={props.skillInput} />
+                    className="handleFiles"
+                    ref={props.skillInput}
+                    multiple />
                 <button
                     className="btn"
                     onClick={props.addSkills}>+ Añadir Habilidad

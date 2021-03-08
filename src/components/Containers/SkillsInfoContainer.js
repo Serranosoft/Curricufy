@@ -21,13 +21,19 @@ class SkillsInfoContainer extends Component {
     addSkills(e) {
         e.preventDefault();
         if (this.skillInput.current.files[0] != undefined) {
-            if (this.state.skills.length < 7) {
+            let skills = [];
+            [...this.skillInput.current.files].forEach(element => {
+                skills.push([URL.createObjectURL(element)]);
+            });
+            if (skills.length <= 7) {
                 this.setState({
-                    skills: [...this.state.skills, [URL.createObjectURL(this.skillInput.current.files[0])]]
+                    skills: skills
                 }, () => {
                     this.props.updateSkillsState(this.state)
                     document.getElementById("skillsInfoForm").reset();
                 })
+            } else {
+                document.getElementById("skillsError").innerHTML = "Solo puedes agregar hasta 7 logos"
             }
         }
     }
@@ -47,9 +53,9 @@ class SkillsInfoContainer extends Component {
                 round: !prevState.round
             }
         }, () => {
-            this.state.round ? 
-            document.getElementById("roundImg").setAttribute("src", RoundImgActive) :
-            document.getElementById("roundImg").setAttribute("src", RoundImg)
+            this.state.round ?
+                document.getElementById("roundImg").setAttribute("src", RoundImgActive) :
+                document.getElementById("roundImg").setAttribute("src", RoundImg)
             this.props.updateSkillsState(this.state)
         })
     }
