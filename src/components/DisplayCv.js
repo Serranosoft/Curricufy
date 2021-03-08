@@ -21,7 +21,10 @@ class DisplayCv extends Component {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     const node = document.getElementById('displayWrapper');
     const scale = 1500 / node.offsetWidth;
-
+    const divWidth = node.clientWidth;
+    const divHeight = node.clientHeight;
+    const PDF_Width = divWidth+30;
+    const PDF_Height = divHeight+30;
     switch (e.target.id) {
       case "downloadAsPdf":
         domtoimage.toJpeg(node, {
@@ -35,8 +38,8 @@ class DisplayCv extends Component {
           }
         })
           .then(function (dataUrl) {
-            const pdf = new jsPDF();
-            pdf.addImage(dataUrl, 'PNG', 10, 0, -200, -200);
+            const pdf = new jsPDF("p", "pt", [PDF_Width, PDF_Height]);
+            pdf.addImage(dataUrl, 'PNG', 15, 0, divWidth, divHeight); //-200,-200
             pdf.save("CV.pdf");
           });
         break;
