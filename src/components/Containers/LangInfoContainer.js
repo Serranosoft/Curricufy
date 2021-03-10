@@ -32,6 +32,7 @@ class LangInfoContainer extends Component{
     addLang(e) {
         e.preventDefault();
         if(this.state.langName.length > 0) {
+            document.getElementById("langNameError").innerHTML = "";
             this.setState({
                 langs: [...this.state.langs, [this.state.langName, this.state.level, this.state.langColor]]
             }, () => {
@@ -40,6 +41,8 @@ class LangInfoContainer extends Component{
                     langName: ""
                 })
             })
+        } else {
+            document.getElementById("langNameError").innerHTML = "Introduce un idioma"
         }
     }
     

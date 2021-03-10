@@ -48,12 +48,7 @@ class EducationInfoContainer extends Component {
     addStudies(event) {
         event.preventDefault();
         if (
-            this.state.school.length > 0 &&
-            this.state.title.length > 0 &&
-            this.state.dateStudy.length > 0 ||
-            this.state.school.length > 0 &&
-            this.state.title.length > 0 &&
-            this.state.finishStudy
+            this.validateForm()
         ) {
             this.setState({
                 studies: [...this.state.studies, [this.state.school, this.state.title, moment(this.state.dateStudy).format("DD / MM / YYYY"), this.state.finishStudy]]
@@ -67,6 +62,35 @@ class EducationInfoContainer extends Component {
                 })
             })
         }
+    }
+
+    validateForm() {
+        const schoolError = document.getElementById("schoolError")
+        const titleError = document.getElementById("titleError")
+        const dateStudyError = document.getElementById("dateStudyError")
+        const studyingInput = document.getElementById("studying");
+
+        this.state.school.length < 1 ? schoolError.innerHTML = "Introduce una escuela/universidad" : schoolError.innerHTML = "";
+        this.state.title.length < 1 ? titleError.innerHTML = "Introduce un título" : titleError.innerHTML = "";
+        if (this.state.dateStudy.length < 1 && !studyingInput.checked) {
+            dateStudyError.innerHTML = "Introduce una fecha";
+        } else if (this.state.dateStudy.length < 1 && studyingInput.checked) {
+            dateStudyError.innerHTML = "";
+        }
+
+        if (
+            this.state.school.length > 0 &&
+            this.state.title.length > 0 &&
+            this.state.dateStudy.length > 0 ||
+            this.state.school.length > 0 &&
+            this.state.title.length > 0 &&
+            this.state.finishStudy
+        ) {
+            return true;
+        }
+
+        return false;
+
     }
 
     resetStudies(e) {
@@ -101,7 +125,7 @@ class EducationInfoContainer extends Component {
     }
 
     hoverColumns(event) {
-        switch(event.target.id) {
+        switch (event.target.id) {
             case "EducGrid1":
                 document.getElementById("EducGrid1").setAttribute("src", grid1Hover);
                 break;
@@ -111,12 +135,12 @@ class EducationInfoContainer extends Component {
             case "EducGrid3":
                 document.getElementById("EducGrid3").setAttribute("src", grid3Hover);
                 break;
-            
+
         }
     }
 
     unHoverColumns(event) {
-        switch(event.target.id) {
+        switch (event.target.id) {
             case "EducGrid1":
                 document.getElementById("EducGrid1").setAttribute("src", grid1);
                 break;
@@ -126,7 +150,7 @@ class EducationInfoContainer extends Component {
             case "EducGrid3":
                 document.getElementById("EducGrid3").setAttribute("src", grid3);
                 break;
-            
+
         }
     }
 

@@ -6,6 +6,7 @@ function LangInfoForm(props) {
             <h3>Añade algunos <span className="highlight">idiomas</span></h3>
             <form className="col-2" id="langInfoForm">
                 <label> Idioma
+                <span id="langNameError" className="ErrorInput"></span>
                     <input
                         type="text"
                         value={props.langName}

@@ -8,7 +8,7 @@ function ExperienceInfoForm(props) {
             <form className="col-2">
 
                 <label>Empresa:
-                    <span id="CompanyNameError" className="ErrorInput"></span>
+                    <span id="companyNameError" className="ErrorInput"></span>
                     <input
                         type="text"
                         value={props.companyName}
@@ -17,7 +17,7 @@ function ExperienceInfoForm(props) {
                 </label>
 
                 <label>Posición en la empresa:
-                    <span id="CompanyPositionError" className="ErrorInput"></span>
+                    <span id="companyPositionError" className="ErrorInput"></span>
                     <input
                         type="text"
                         value={props.companyPosition}
@@ -26,7 +26,7 @@ function ExperienceInfoForm(props) {
                 </label>
 
                 <label>¿Cuando empezaste a trabajar?
-                    <span id="StartWorkingError" className="ErrorInput"></span>
+                    <span id="startWorkingError" className="ErrorInput"></span>
                     <input
                         type="date"
                         value={props.startWorking}
@@ -37,7 +37,7 @@ function ExperienceInfoForm(props) {
                 </label>
 
                 <label>¿Cuando terminaste de trabajar?
-                    <span id="FinishWorkingError" className="ErrorInput"></span>
+                    <span id="finishWorkingError" className="ErrorInput"></span>
                     <input
                         type="date"
                         value={props.finishWorking}
@@ -48,7 +48,7 @@ function ExperienceInfoForm(props) {
                 </label>
 
                 <label>Describe brevemente tu trabajo
-                    <span id="WorkDescriptionError" className="ErrorInput"></span>
+                    <span id="workDescriptionError" className="ErrorInput"></span>
                     <textarea
                         value={props.workDescription}
                         name="workDescription"

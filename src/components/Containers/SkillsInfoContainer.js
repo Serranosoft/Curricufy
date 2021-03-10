@@ -25,6 +25,7 @@ class SkillsInfoContainer extends Component {
                 skills.push([URL.createObjectURL(element)]);
             });
             if (skills.length <= 7) {
+                document.getElementById("skillsError").innerHTML = ""
                 this.setState({
                     skills: skills
                 }, () => {
@@ -34,6 +35,8 @@ class SkillsInfoContainer extends Component {
             } else {
                 document.getElementById("skillsError").innerHTML = "Solo puedes agregar hasta 7 habilidades"
             }
+        } else {
+            document.getElementById("skillsError").innerHTML = "Elige una imágen"
         }
     }
 

@@ -68,6 +68,7 @@ function EducationInfoForm(props) {
 
                     <span>Estoy estudiando actualmente
                     <input
+                            id="studying"
                             type="checkbox"
                             checked={props.finishStudy}
                             value={props.finishStudy}
