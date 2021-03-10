@@ -222,7 +222,8 @@ class DisplayCv extends Component {
               <div>
                 <p id="DisplayName">{this.props.data.name}</p>
                 <p id="DisplayEmail">{this.props.data.email}</p>
-                <p id="DisplayPhone">{this.props.data.phone}</p>
+                <p className="displayBoldInfo">{this.props.data.phone}</p>
+                <p className="displayBoldInfo">{this.props.data.web}</p>
               </div>
             </div>
 

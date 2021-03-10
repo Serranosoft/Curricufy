@@ -14,6 +14,7 @@ class GeneralInfoContainer extends Component {
             name: "",
             email: "",
             phone: "",
+            web: "",
             generalColumn: true
         }
         this.handleAvatar = this.handleAvatar.bind(this);
@@ -94,6 +95,7 @@ class GeneralInfoContainer extends Component {
                 name={this.state.name}
                 email={this.state.email}
                 phone={this.state.phone}
+                web={this.state.web}
                 avatar={this.state.avatar}
             />
         )

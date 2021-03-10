@@ -61,6 +61,15 @@ function GeneralInfoForm(props) {
                         onChange={props.handleChange} />
                 </label>
 
+                <label>Web personal:
+                    <input
+                        type="text"
+                        value={props.web}
+                        name="web"
+                        maxLength="35"
+                        onChange={props.handleChange} />
+                </label>
+
             </form>
         </div>
     )

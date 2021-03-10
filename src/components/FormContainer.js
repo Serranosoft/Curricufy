@@ -16,6 +16,7 @@ class FormContainer extends Component {
             name: "",
             email: "",
             phone: "",
+            web: "",
             generalColumn: true,
 
             studies: [],
@@ -59,6 +60,7 @@ class FormContainer extends Component {
             name: data.name,
             email: data.email,
             phone: data.phone,
+            web: data.web,
             generalColumn: data.generalColumn
         }, () => {
             this.props.onUpdate(this.state)

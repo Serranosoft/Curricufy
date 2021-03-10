@@ -24,7 +24,7 @@
   font-size: 14px;
 }
 
-#DisplayPhone {
+.displayBoldInfo {
   line-height: 0.3;
   font-size: 14px;
   font-weight: bold;
