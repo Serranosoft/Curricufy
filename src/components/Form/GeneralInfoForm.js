@@ -7,8 +7,8 @@ function GeneralInfoForm(props) {
 
     return (
         <div>
-            <img src={props.avatar === "" ? DefaultAvatar : props.avatar} className="profileImg" />
-            <input type="file" className="handleFiles handleAvatar" onChange={props.handleAvatar}></input>
+            <img src={props.data.avatar === "" ? DefaultAvatar : props.data.avatar} className="profileImg" />
+            <input type="file" name="avatar" className="handleFiles handleAvatar" onChange={props.setValues}></input>
             <div className="f-b">
                 <h3><span className="highlight">Información</span> general sobre ti</h3>
                 <div>
@@ -36,38 +36,40 @@ function GeneralInfoForm(props) {
                 <label>Nombre:
                     <input
                         type="text"
-                        value={props.name}
+                        value={props.data.name}
                         name="name"
                         maxLength="30"
-                        onChange={props.handleChange} />
+                        onChange={props.setValues}
+                    />
                 </label>
 
                 <label>Email:
                     <input
                         type="text"
-                        value={props.email}
+                        value={props.data.email}
                         name="email"
                         maxLength="35"
-                        onChange={props.handleChange} />
+                        onChange={props.setValues}
+                    />
                 </label>
 
                 <label>Número de teléfono:
                     <input
                         type="tel"
-                        value={props.phone}
+                        value={props.data.phone}
                         name="phone"
                         maxLength="15"
                         pattern="[0-9+ ]*"
-                        onChange={props.handleChange} />
+                        onChange={props.setValues} />
                 </label>
 
                 <label>Web personal:
                     <input
                         type="text"
-                        value={props.web}
+                        value={props.data.web}
                         name="web"
                         maxLength="35"
-                        onChange={props.handleChange} />
+                        onChange={props.setValues} />
                 </label>
 
             </form>

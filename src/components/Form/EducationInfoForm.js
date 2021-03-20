@@ -41,8 +41,8 @@ function EducationInfoForm(props) {
                     <span id="schoolError" className="ErrorInput"></span>
                     <input
                         type="text"
-                        value={props.school}
-                        name="school"
+                        value={props.schoolName}
+                        name="schoolName"
                         maxLength="35"
                         onChange={props.handleChange} />
                 </label>
@@ -51,8 +51,8 @@ function EducationInfoForm(props) {
                     <span id="titleError" className="ErrorInput"></span>
                     <input
                         type="text"
-                        value={props.title}
-                        name="title"
+                        value={props.titleName}
+                        name="titleName"
                         maxLength="40"
                         onChange={props.handleChange} />
                 </label>
@@ -80,6 +80,7 @@ function EducationInfoForm(props) {
 
                 <div className="f-e">
                     <button
+                        type="submit"
                         value="+ Add a Study"
                         className="btn add"
                         onClick={props.addStudies}> Añadir Estudio

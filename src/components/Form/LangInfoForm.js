@@ -16,7 +16,7 @@ function LangInfoForm(props) {
                 </label>
 
                 <label> Nivel
-                    <select value={props.level} onChange={props.handleChange}>
+                    <select value={props.level} onChange={props.handleChange} name="level">
                         <option value="Basico">Bajo</option>
                         <option value="Intermedio (Bajo)">Intermedio-bajo</option>
                         <option value="Intermedio (Alto)">Intermedio-alto</option>
@@ -28,18 +28,19 @@ function LangInfoForm(props) {
                 <label> Elige un color
                     <input 
                         type="color" 
+                        name="langColor"
                         value={props.langColor} 
-                        onChange={props.handleColor} />
+                        onChange={props.handleChange} />
                 </label>
 
                 <div className="f-e">
                     <button
                         className="btn"
-                        onClick={props.addLang}>+ Añadir Idioma
+                        onClick={props.addLangs}>+ Añadir Idioma
                 </button>
                     <button
                         className="btn"
-                        onClick={props.resetLang}>Eliminar Idioma
+                        onClick={props.resetLangs}>Eliminar Idioma
                 </button>
                 </div>
 

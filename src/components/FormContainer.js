@@ -6,152 +6,40 @@ import SkillsInfoContainer from "./Containers/SkillsInfoContainer";
 import LangInfoContainer from "./Containers/LangInfoContainer";
 import ExtraInfoContainer from "./Containers/ExtraInfoContainer";
 
-class FormContainer extends Component {
 
-    constructor(props) {
-        super(props);
+const FormContainer = (props) => {
+    return (
+        <div>
+            <div id="cv_wrapper" className="slide-in-elliptic-top-fwd">
 
-        this.state = {
-            avatar: "",
-            name: "",
-            email: "",
-            phone: "",
-            web: "",
-            generalColumn: true,
+                <GeneralInfoContainer
+                    setValues={props.setValues}
+                    data={props.data}
+                />
 
-            studies: [],
-            school: "",
-            title: "",
-            dateStudy: "",
-            finishStudy: false,
-            educationColumns: 3,
+                <SkillsInfoContainer
+                    setValues={props.setValues}
+                />
 
-            works: [],
-            companyName: "",
-            companyPosition: "",
-            startWorking: "",
-            finishWorking: "",
-            workDescription: "",
+                <EducationInfoContainer
+                    setValues={props.setValues}
+                />
 
-            skills: [],
-            round: false,
+                <ExperienceInfoContainer
+                    setValues={props.setValues}
+                />
 
-            langs: [],
+                <LangInfoContainer
+                    setValues={props.setValues}
+                />
 
-            extraInfo: []
-            
-        }
+                <ExtraInfoContainer
+                    setValues={props.setValues}
+                />
 
-        this.updateGeneralState = this.updateGeneralState.bind(this);
-        this.updateSkillsState = this.updateSkillsState.bind(this);
-        this.updateEducationState = this.updateEducationState.bind(this);
-        this.updateExperienceState = this.updateExperienceState.bind(this);
-        this.updateLangState = this.updateLangState.bind(this);
-        this.updateExtraInfoState = this.updateExtraInfoState.bind(this)
-    }
-
-    componentDidMount() {
-        this.props.onUpdate(this.state)
-    }
-
-    updateGeneralState(data) {
-        this.setState({
-            avatar: data.avatar,
-            name: data.name,
-            email: data.email,
-            phone: data.phone,
-            web: data.web,
-            generalColumn: data.generalColumn
-        }, () => {
-            this.props.onUpdate(this.state)
-        })
-    }
-    
-    updateSkillsState(data) {
-        this.setState({
-            skills: data.skills,
-            round: data.round
-        }, () => {
-            this.props.onUpdate(this.state)
-        })
-    }
-
-    updateEducationState(data) {
-        this.setState({
-            studies: data.studies,
-            school: data.school,
-            title: data.title,
-            dateStudy: data.dateStudy,
-            finishStudy: data.finishStudy,
-            educationColumns: data.educationColumns
-        }, () => {
-            this.props.onUpdate(this.state)
-        })
-    }
-
-    updateExperienceState(data) {
-        this.setState({
-            works: data.works,
-            companyName: data.companyName,
-            companyPosition: data.companyPosition,
-            startWorking: data.startWorking,
-            finishWorking: data.finishWorking,
-            workDescription: data.workDescription
-        }, () => {
-            this.props.onUpdate(this.state)
-        })
-    }
-
-    updateLangState(data) {
-        this.setState({
-            langs: data.langs
-        }, () => {
-            this.props.onUpdate(this.state)
-        })
-    }
-
-    updateExtraInfoState(data) {
-        this.setState({
-            extraInfo: data.extraInfo
-        }, () => {
-            this.props.onUpdate(this.state)
-        })
-    }
-
-    render() {
-        return (
-            <div>
-                <div id="cv_wrapper" className="slide-in-elliptic-top-fwd">
-
-                    <GeneralInfoContainer
-                        updateGeneralState={this.updateGeneralState}
-                    />
-                    
-                    <SkillsInfoContainer
-                        updateSkillsState={this.updateSkillsState}
-                    />
-
-                    <EducationInfoContainer
-                        updateEducationState={this.updateEducationState}
-                    />
-
-                    <ExperienceInfoContainer
-                        updateExperienceState={this.updateExperienceState}
-                    />
-
-                    <LangInfoContainer
-                        updateLangState={this.updateLangState}
-                    />
-
-                    <ExtraInfoContainer
-                        updateExtraInfoState={this.updateExtraInfoState}
-                    />
-
-                </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
-
 
 export default FormContainer

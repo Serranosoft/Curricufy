@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import EducationInfoForm from "../Form/EducationInfoForm";
 import grid1Hover from "../../styles/images/grid1Hover.png";
 import grid2Hover from "../../styles/images/grid2Hover.png";
@@ -8,123 +8,67 @@ import grid2 from "../../styles/images/grid2.png";
 import grid3 from "../../styles/images/grid3.png";
 import moment from "moment";
 
-class EducationInfoContainer extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            studies: [],
-            school: "",
-            title: "",
-            dateStudy: "",
-            finishStudy: false,
-            educationColumns: 3
-        }
 
-        this.handleChange = this.handleChange.bind(this);
-        this.addStudies = this.addStudies.bind(this);
-        this.resetStudies = this.resetStudies.bind(this);
-        this.handleColumns = this.handleColumns.bind(this);
-        this.hoverColumns = this.hoverColumns.bind(this);
-        this.unHoverColumns = this.unHoverColumns.bind(this);
+function EducationInfoContainer(props) {
+
+    const initialState = {
+        schoolName: "", titleName: "", dateStudy: "", finishStudy: false
+    }
+    let studiesData = [];
+
+    const [inputValues, setInputValues] = useState(initialState);
+    const [studies, addStudy] = useState([]);
+    const [columns, changeColumns] = useState(3)
+    
+    let data = {
+        schoolName: inputValues.schoolName,
+        titleName: inputValues.titleName,
+        dateStudy: inputValues.dateStudy,
+        finishStudy: inputValues.finishStudy
     }
 
-    handleChange(event) {
-        const target = event.target;
-        const value = target.type === "checkbox" ? target.checked : target.value
-        const dateStudyInput = document.getElementsByName("dateStudy")[0];
-        if (target.checked) {
-            dateStudyInput.setAttribute("style", "background: gray")
-            dateStudyInput.disabled = true;
-            dateStudyInput.valueAsDate = null;
-        } else {
-            dateStudyInput.setAttribute("style", "background: transparent")
-            dateStudyInput.disabled = false;
-        }
-        this.setState({
-            [event.target.name]: value
-        })
-    }
-
-    addStudies(event) {
-        event.preventDefault();
-        if (
-            this.validateForm()
-        ) {
-            this.setState({
-                studies: [...this.state.studies, [this.state.school, this.state.title, moment(this.state.dateStudy).format("DD / MM / YYYY"), this.state.finishStudy]]
-            }, () => {
-                this.props.updateEducationState(this.state);
-                this.setState({
-                    school: "",
-                    title: "",
-                    dateStudy: "",
-                    finishStudy: ""
-                })
-            })
-        }
-    }
-
-    validateForm() {
+    const handleChange = event => {
+        // Destructuring Array
+        // Esta cogiendo la propiedad name y value del objeto target y los almacena en variable name y value
+        const { name, value } = event.target;
+        // Se le pasa el mismo objeto que es, osea, initialState transformado :
+        // ...inputValues es igual a un objeto con todas sus propiedades, osea, es initialState
+        // y [name]:value es igual a schoolName: "valor"
+        // Entonces le pasamos un objeto así initialState = {schoolName: "valor", titleName: ""...}
+        // Ya que solo cambiará el valor de la propiedad [name].
+        // Y sobreescribe el objeto anterior que era el mismo pero con {schoolName: ""}
+        setInputValues({ ...inputValues, [name]: value });
+    };
+    
+    const validateForm = () => {
         const schoolError = document.getElementById("schoolError")
         const titleError = document.getElementById("titleError")
         const dateStudyError = document.getElementById("dateStudyError")
         const studyingInput = document.getElementById("studying");
 
-        this.state.school.length < 1 ? schoolError.innerHTML = "Introduce una escuela/universidad" : schoolError.innerHTML = "";
-        this.state.title.length < 1 ? titleError.innerHTML = "Introduce un título" : titleError.innerHTML = "";
-        if (this.state.dateStudy.length < 1 && !studyingInput.checked) {
+        inputValues.schoolName.length < 1 ? schoolError.innerHTML = "Introduce una escuela/universidad" : schoolError.innerHTML = "";
+        inputValues.titleName.length < 1 ? titleError.innerHTML = "Introduce un título" : titleError.innerHTML = "";
+        if (inputValues.dateStudy.length < 1 && !studyingInput.checked) {
             dateStudyError.innerHTML = "Introduce una fecha";
-        } else if (this.state.dateStudy.length < 1 && studyingInput.checked) {
+        } else if (inputValues.dateStudy.length < 1 && studyingInput.checked) {
             dateStudyError.innerHTML = "";
         }
 
         if (
-            this.state.school.length > 0 &&
-            this.state.title.length > 0 &&
-            this.state.dateStudy.length > 0 ||
-            this.state.school.length > 0 &&
-            this.state.title.length > 0 &&
-            this.state.finishStudy
+            inputValues.schoolName.length > 0 &&
+            inputValues.titleName.length > 0 &&
+            inputValues.dateStudy.length > 0 ||
+            inputValues.schoolName.length > 0 &&
+            inputValues.titleName.length > 0 &&
+            inputValues.finishStudy
         ) {
             return true;
         }
 
         return false;
-
     }
 
-    resetStudies(e) {
-        e.preventDefault();
-        this.setState(prevState => {
-            return {
-                studies: prevState.studies.slice(0, -1)
-            }
-        }, () => {
-            this.props.updateEducationState(this.state);
-        })
-    }
-
-    handleColumns(event) {
-        let columns = 3;
-        switch (event.target.id) {
-            case "EducGrid1":
-                columns = 1;
-                break;
-            case "EducGrid2":
-                columns = 2;
-                break;
-            case "EducGrid3":
-                columns = 3;
-                break;
-        }
-        this.setState({
-            educationColumns: columns
-        }, () => {
-            this.props.updateEducationState(this.state);
-        })
-    }
-
-    hoverColumns(event) {
+    const hoverColumns = (event) => {
         switch (event.target.id) {
             case "EducGrid1":
                 document.getElementById("EducGrid1").setAttribute("src", grid1Hover);
@@ -139,7 +83,7 @@ class EducationInfoContainer extends Component {
         }
     }
 
-    unHoverColumns(event) {
+    const unHoverColumns = (event) => {
         switch (event.target.id) {
             case "EducGrid1":
                 document.getElementById("EducGrid1").setAttribute("src", grid1);
@@ -154,23 +98,56 @@ class EducationInfoContainer extends Component {
         }
     }
 
-    render() {
-        return (
-            <EducationInfoForm
-                handleChange={this.handleChange}
-                addStudies={this.addStudies}
-                resetStudies={this.resetStudies}
-                handleColumns={this.handleColumns}
-                hoverColumns={this.hoverColumns}
-                unHoverColumns={this.unHoverColumns}
-                school={this.state.school}
-                title={this.state.title}
-                dateStudy={this.state.dateStudy}
-                finishStudy={this.state.finishStudy}
-            />
-
-        )
+    const handleColumns = (event) => {
+        switch (event.target.id) {
+            case "EducGrid1":
+                changeColumns(1);
+                break;
+            case "EducGrid2":
+                changeColumns(2);
+                break;
+            case "EducGrid3":
+                changeColumns(3);
+                break;
+        }
     }
+
+    const addStudies = (e) => {
+        e.preventDefault();
+        if (
+            validateForm()
+        ) {
+            studiesData.push(...studies, [inputValues.schoolName, inputValues.titleName, moment(inputValues.dateStudy).format("DD / MM / YYYY"), inputValues.finishStudy])
+            addStudy(studiesData);
+        }
+    }
+
+    const resetStudies = (e) => {
+        e.preventDefault();
+        addStudy(studies.slice(0,-1))
+    }
+
+    useEffect(() => {
+        props.setValues({ "educationColumns": columns })
+    }, [columns])
+
+    useEffect(() => {
+        props.setValues({ "studies": studies })
+        setInputValues(initialState)
+    }, [studies])
+
+
+    return (
+        <EducationInfoForm
+            {...data}
+            handleChange={handleChange}
+            addStudies={addStudies}
+            resetStudies={resetStudies}
+            hoverColumns={hoverColumns}
+            unHoverColumns={unHoverColumns}
+            handleColumns={handleColumns}
+        />
+    )
 }
 
 export default EducationInfoContainer

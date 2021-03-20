@@ -4,7 +4,6 @@ import icon from "../styles/images/favicon.png"
 
 function Footer() {
 
-
     return (
         <footer>
             <img src={icon} className="logo"/>

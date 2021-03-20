@@ -1,59 +1,45 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import ExtraInfoForm from "../Form/ExtraInfoForm"
 
-class ExtraInfoContainer extends Component {
-    constructor() {
-        super()
-        this.state = {
-            extraInfoName: "",
-            extraInfo: []
+function ExtraInfoContainer(props) {
+
+    let extraInfoData = [];
+    const initialValues = {extraInfoName: ""}
+    const [inputValues, setInputValues] = useState(initialValues);
+    const [extraInfo, addExtraInfo] = useState([])
+
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setInputValues({...inputValues, [name]: value})
+    }
+    
+    const addExtraInfos = (e) => {
+        e.preventDefault();
+        if(inputValues.extraInfoName.length > 0) {
+            extraInfoData.push(...extraInfo, [inputValues.extraInfoName])
+            addExtraInfo(extraInfoData)
+        } else {
+            document.getElementById("extraInfoError").innerHTML = "Introduce alguna habilidad"
         }
-
-        this.handleChange = this.handleChange.bind(this)
-        this.addExtraInfo = this.addExtraInfo.bind(this)
-        this.resetExtraInfo = this.resetExtraInfo.bind(this)
     }
-
-    handleChange(event) {
-        const value = event.target.value
-        this.setState({
-            [event.target.name]: value
-        })
-    }
-
-    addExtraInfo(e) {
+    
+    const resetExtraInfo = (e) => {
         e.preventDefault();
-        this.setState({
-            extraInfo: [...this.state.extraInfo, [this.state.extraInfoName]]
-        }, () => {
-            this.props.updateExtraInfoState(this.state)
-            this.setState({
-                extraInfoName: ""
-            })
-        })
+        addExtraInfo(extraInfo.slice(0,-1))
     }
 
-    resetExtraInfo(e) {
-        e.preventDefault();
-        this.setState(prevState => {
-            return {
-                extraInfo: prevState.extraInfo.slice(0,-1)
-            }
-        }, () => {
-            this.props.updateExtraInfoState(this.state)
-        })
-    }
+    useEffect(() => {
+        props.setValues({ "extraInfo": extraInfo })
+        inputValues.extraInfoName = "";
+    }, [extraInfo])
 
-    render() {
-        return (
-            <ExtraInfoForm
-                handleChange={this.handleChange}
-                addExtraInfo={this.addExtraInfo}
-                resetExtraInfo={this.resetExtraInfo}
-                extraInfoName={this.state.extraInfoName}
-            />
-        )
-    }
+    return (
+        <ExtraInfoForm
+            handleChange={handleChange}
+            addExtraInfos={addExtraInfos}
+            resetExtraInfo={resetExtraInfo}
+            extraInfoName={inputValues.extraInfoName}
+        />
+    )
 }
-
 export default ExtraInfoContainer

@@ -8,6 +8,7 @@ function ExtraInfoForm(props) {
             <form>
                 <label>
                     Describe
+                <span id="extraInfoError" className="ErrorInput"></span>
                     <input
                         id="extraInfoInput"
                         type="text"
@@ -21,7 +22,7 @@ function ExtraInfoForm(props) {
                 <div className="f-a">
                     <button
                         className="btn"
-                        onClick={props.addExtraInfo}>+ Añadir Información
+                        onClick={props.addExtraInfos}>+ Añadir Información
                         </button>
 
                     <button
