@@ -136,3 +136,19 @@
 #extraInfoName {
   font-weight: bold;
 }
+
+#webUrl {
+  font-weight: bold;
+}
+
+#webDescription {
+  width: 100%;
+  text-align: center;
+  word-wrap: break-word;
+  font-size: 13px;
+}
+
+#webWrapper {
+  width: 90%;
+  margin: 0 auto;
+}

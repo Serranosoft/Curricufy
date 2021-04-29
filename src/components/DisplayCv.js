@@ -145,6 +145,25 @@ class DisplayCv extends Component {
     }
   }
 
+  renderWebs() {
+    let webs = [];
+    if (this.props.data.webs != undefined) {
+      if (this.props.data.webs.length > 0) {
+        [this.props.data.webs].map((el => {
+          el.map((el, index) => {
+            webs.push(
+              <div key={index}>
+                <p id="webUrl">{el[0]}</p>
+                <p id="webDescription">{el[1]}</p>
+              </div>
+            )
+          })
+        }))
+        return webs;
+      }
+    }
+  }
+
   renderLangs() {
     let langs = [];
     if (this.props.data.langs != undefined) {
@@ -231,6 +250,16 @@ class DisplayCv extends Component {
               {this.renderSkills()}
             </div>
 
+            {this.props.data.webs === undefined ||
+              this.props.data.webs.length < 1 ? "" :
+              <h3 className="SectionLabel">PROYECTOS Y WEBS</h3>}
+            <div className="col-3">
+              {this.renderWebs()}
+            </div>
+
+            {this.props.data.langs === undefined ||
+              this.props.data.langs.length < 1 ? "" :
+              <h3 className="SectionLabel">IDIOMAS</h3>}
             <div className="col-2">
               {this.renderLangs()}
             </div>

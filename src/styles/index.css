@@ -68,9 +68,18 @@ h3 {
 /* GRID */
 
 .col-2{
+  width: 95%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  margin: 0 auto;
+}
+
+.col-3 {
+  width: 95%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
 }
 
 /* sticky */

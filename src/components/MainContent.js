@@ -27,7 +27,9 @@ const MainContent = () => {
 
             langs: [],
 
-            extraInfo: []
+            extraInfo: [],
+
+            webs: []
         }
     );
 
@@ -55,6 +57,9 @@ const MainContent = () => {
                         break;
                     case "extraInfo":
                         onUpdate({ ["extraInfo"]: event.extraInfo });
+                        break;
+                    case "webs":
+                        onUpdate({ ["webs"]: event.webs });
                         break;
                 }
             }

@@ -5,6 +5,7 @@ import ExperienceInfoContainer from "./Containers/ExperienceInfoContainer";
 import SkillsInfoContainer from "./Containers/SkillsInfoContainer";
 import LangInfoContainer from "./Containers/LangInfoContainer";
 import ExtraInfoContainer from "./Containers/ExtraInfoContainer";
+import WebsInfoContainer from "./Containers/WebsInfoContainer";
 
 
 const FormContainer = (props) => {
@@ -30,6 +31,10 @@ const FormContainer = (props) => {
                 />
 
                 <LangInfoContainer
+                    setValues={props.setValues}
+                />
+
+                <WebsInfoContainer
                     setValues={props.setValues}
                 />
 
