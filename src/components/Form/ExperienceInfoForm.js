@@ -2,8 +2,6 @@ import React from "react";
 
 function ExperienceInfoForm({handleChange, addWorks, resetWorks, ...data}) {
 
-    console.log(data);
-
     return (
         <div>
             <h3>¿Quieres añadir <span className="highlight">experiencia laboral?</span></h3>

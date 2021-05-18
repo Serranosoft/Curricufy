@@ -84,7 +84,7 @@ const MainContent = () => {
             <FormContainer
                 setValues={setValues}
                 data={data} />
-            <DisplayCv data={data} />
+            <DisplayCv {...data} />
         </div>
     )
 
