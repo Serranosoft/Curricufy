@@ -3,7 +3,7 @@ import ExperienceInfoForm from "../Form/ExperienceInfoForm";
 import moment from "moment";
 
 
-function ExperienceInfoContainer(props) {
+function ExperienceInfoContainer({setValues}) {
 
     const initialState = {
         companyName: "", 
@@ -16,13 +16,14 @@ function ExperienceInfoContainer(props) {
 
     const [inputValues, setInputValues] = useState(initialState)
     const [works, addWork] = useState([]);
+    let {companyName, companyPosition, startWorking, finishWorking, workDescription} = inputValues
 
     let data = {
-        companyName: inputValues.companyName,
-        companyPosition: inputValues.companyPosition,
-        startWorking: inputValues.startWorking,
-        finishWorking: inputValues.finishWorking,
-        workDescription: inputValues.workDescription
+        companyName: companyName,
+        companyPosition: companyPosition,
+        startWorking: startWorking,
+        finishWorking: finishWorking,
+        workDescription: workDescription
     }
 
     const handleChange = (e) => {
@@ -37,18 +38,18 @@ function ExperienceInfoContainer(props) {
         const finishWorkingError = document.getElementById("finishWorkingError");
         const workDescriptionError = document.getElementById("workDescriptionError");
 
-        inputValues.companyName.length < 1 ? companyNameError.innerHTML = "Introduce una empresa" : companyNameError.innerHTML = "";
-        inputValues.companyPosition.length < 1 ? companyPositionError.innerHTML = "Introduce un puesto de trabajo" : companyPositionError.innerHTML = "";
-        inputValues.startWorking.length < 1 ? startWorkingError.innerHTML = "Introduce una fecha de comienzo" : startWorkingError.innerHTML = "";
-        inputValues.finishWorking.length < 1 ? finishWorkingError.innerHTML = "Introduce una fecha de finalizar" : finishWorkingError.innerHTML = "";
-        inputValues.workDescription.length < 1 ? workDescriptionError.innerHTML = "Explica brevemente lo que hacías en tu puesto" : workDescriptionError.innerHTML = "";
+        companyName.length < 1 ? companyNameError.innerHTML = "Introduce una empresa" : companyNameError.innerHTML = "";
+        companyPosition.length < 1 ? companyPositionError.innerHTML = "Introduce un puesto de trabajo" : companyPositionError.innerHTML = "";
+        startWorking.length < 1 ? startWorkingError.innerHTML = "Introduce una fecha de comienzo" : startWorkingError.innerHTML = "";
+        finishWorking.length < 1 ? finishWorkingError.innerHTML = "Introduce una fecha de finalizar" : finishWorkingError.innerHTML = "";
+        workDescription.length < 1 ? workDescriptionError.innerHTML = "Explica brevemente lo que hacías en tu puesto" : workDescriptionError.innerHTML = "";
 
         if (
-            inputValues.companyName.length > 1 &&
-            inputValues.companyPosition.length > 1 &&
-            inputValues.startWorking.length > 1 &&
-           inputValues.finishWorking.length > 1 &&
-            inputValues.workDescription.length > 1
+            companyName.length > 1 &&
+            companyPosition.length > 1 &&
+            startWorking.length > 1 &&
+            finishWorking.length > 1 &&
+            workDescription.length > 1
         ) {
             return true;
         }
@@ -60,7 +61,7 @@ function ExperienceInfoContainer(props) {
         if (
             validateForm()
         ) {
-            worksData.push(...works, [inputValues.companyName, inputValues.companyPosition, moment(inputValues.startWorking).format("DD / MM / YYYY"), moment(inputValues.finishWorking).format("DD / MM / YYYY"), inputValues.workDescription])
+            worksData.push(...works, [companyName, companyPosition, moment(startWorking).format("DD / MM / YYYY"), moment(finishWorking).format("DD / MM / YYYY"), workDescription])
             addWork(worksData)
         }
     }
@@ -71,17 +72,17 @@ function ExperienceInfoContainer(props) {
     }
 
     useEffect(() => {
-        props.setValues({ "works": works })
+        setValues({"works": works })
         setInputValues(initialState)
     }, [works])
 
 
     return (
         <ExperienceInfoForm
-            {...data}
             handleChange={handleChange}
             addWorks={addWorks}
             resetWorks={resetWorks}
+            {...data}
         />
     )
 }

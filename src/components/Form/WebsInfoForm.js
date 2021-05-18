@@ -1,6 +1,6 @@
 import React from "react";
 
-function WebsInfoForm(props) {
+function WebsInfoForm({handleChange, addWeb, resetWeb, ...data}) {
 
     return (
         <div>
@@ -13,8 +13,8 @@ function WebsInfoForm(props) {
                         id="webUrlInput"
                         type="text"
                         name="webUrl"
-                        value={props.webUrl}
-                        onChange={props.handleChange}
+                        value={data.webUrl}
+                        onChange={handleChange}
                         maxLength="50"
                     />
                 </label>
@@ -24,20 +24,20 @@ function WebsInfoForm(props) {
                 <span id="webInfoError" className="ErrorInput"></span>
                     <textarea
                         name="webDescription"
-                        value={props.webDescription}
-                        onChange={props.handleChange}
+                        value={data.webDescription}
+                        onChange={handleChange}
                     />
                 </label>
 
                 <div className="f-e">
                     <button
                         className="btn"
-                        onClick={props.addWeb}>+ Añadir página web 
+                        onClick={addWeb}>+ Añadir página web 
                         </button>
 
                     <button
                         className="btn"
-                        onClick={props.resetWeb}>Eliminar página web
+                        onClick={resetWeb}>Eliminar página web
                         </button>
                 </div>
 

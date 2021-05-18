@@ -1,6 +1,8 @@
 import React from "react";
 
-function ExperienceInfoForm(props) {
+function ExperienceInfoForm({handleChange, addWorks, resetWorks, ...data}) {
+
+    console.log(data);
 
     return (
         <div>
@@ -11,27 +13,27 @@ function ExperienceInfoForm(props) {
                     <span id="companyNameError" className="ErrorInput"></span>
                     <input
                         type="text"
-                        value={props.companyName}
+                        value={data.companyName}
                         name="companyName"
-                        onChange={props.handleChange} />
+                        onChange={handleChange} />
                 </label>
 
                 <label>Posición en la empresa:
                     <span id="companyPositionError" className="ErrorInput"></span>
                     <input
                         type="text"
-                        value={props.companyPosition}
+                        value={data.companyPosition}
                         name="companyPosition"
-                        onChange={props.handleChange} />
+                        onChange={handleChange} />
                 </label>
 
                 <label>¿Cuando empezaste a trabajar?
                     <span id="startWorkingError" className="ErrorInput"></span>
                     <input
                         type="date"
-                        value={props.startWorking}
+                        value={data.startWorking}
                         name="startWorking"
-                        onChange={props.handleChange}
+                        onChange={handleChange}
                     />
 
                 </label>
@@ -40,9 +42,9 @@ function ExperienceInfoForm(props) {
                     <span id="finishWorkingError" className="ErrorInput"></span>
                     <input
                         type="date"
-                        value={props.finishWorking}
+                        value={data.finishWorking}
                         name="finishWorking"
-                        onChange={props.handleChange}
+                        onChange={handleChange}
                     />
 
                 </label>
@@ -50,9 +52,9 @@ function ExperienceInfoForm(props) {
                 <label>Describe brevemente tu trabajo
                     <span id="workDescriptionError" className="ErrorInput"></span>
                     <textarea
-                        value={props.workDescription}
+                        value={data.workDescription}
                         name="workDescription"
-                        onChange={props.handleChange}
+                        onChange={handleChange}
                     />
 
                 </label>
@@ -60,12 +62,12 @@ function ExperienceInfoForm(props) {
                 <div className="f-e">
                     <button
                         className="btn add"
-                        onClick={props.addWorks}>+ Añadir Trabajo
+                        onClick={addWorks}>+ Añadir Trabajo
                     </button>
 
                     <button
                         className="btn add"
-                        onClick={props.resetWorks}>Eliminar trabajo
+                        onClick={resetWorks}>Eliminar trabajo
                     </button>
                 </div>
             </form>

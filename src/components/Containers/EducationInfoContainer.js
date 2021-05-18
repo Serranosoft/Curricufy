@@ -9,7 +9,7 @@ import grid3 from "../../styles/images/grid3.png";
 import moment from "moment";
 
 
-function EducationInfoContainer(props) {
+function EducationInfoContainer({setValues}) {
 
     const initialState = {
         schoolName: "", titleName: "", dateStudy: "", finishStudy: false
@@ -17,14 +17,15 @@ function EducationInfoContainer(props) {
     let studiesData = [];
 
     const [inputValues, setInputValues] = useState(initialState);
+    let { schoolName, titleName, dateStudy, finishStudy } = inputValues
     const [studies, addStudy] = useState([]);
     const [columns, changeColumns] = useState(3)
     
     let data = {
-        schoolName: inputValues.schoolName,
-        titleName: inputValues.titleName,
-        dateStudy: inputValues.dateStudy,
-        finishStudy: inputValues.finishStudy
+        schoolName: schoolName,
+        titleName: titleName,
+        dateStudy: dateStudy,
+        finishStudy: finishStudy
     }
 
     const handleChange = event => {
@@ -46,21 +47,21 @@ function EducationInfoContainer(props) {
         const dateStudyError = document.getElementById("dateStudyError")
         const studyingInput = document.getElementById("studying");
 
-        inputValues.schoolName.length < 1 ? schoolError.innerHTML = "Introduce una escuela/universidad" : schoolError.innerHTML = "";
-        inputValues.titleName.length < 1 ? titleError.innerHTML = "Introduce un título" : titleError.innerHTML = "";
-        if (inputValues.dateStudy.length < 1 && !studyingInput.checked) {
+        schoolName.length < 1 ? schoolError.innerHTML = "Introduce una escuela/universidad" : schoolError.innerHTML = "";
+        titleName.length < 1 ? titleError.innerHTML = "Introduce un título" : titleError.innerHTML = "";
+        if (dateStudy.length < 1 && !studyingInput.checked) {
             dateStudyError.innerHTML = "Introduce una fecha";
-        } else if (inputValues.dateStudy.length < 1 && studyingInput.checked) {
+        } else if (dateStudy.length < 1 && studyingInput.checked) {
             dateStudyError.innerHTML = "";
         }
 
         if (
-            inputValues.schoolName.length > 0 &&
-            inputValues.titleName.length > 0 &&
-            inputValues.dateStudy.length > 0 ||
-            inputValues.schoolName.length > 0 &&
-            inputValues.titleName.length > 0 &&
-            inputValues.finishStudy
+            schoolName.length > 0 &&
+            titleName.length > 0 &&
+            dateStudy.length > 0 ||
+            schoolName.length > 0 &&
+            titleName.length > 0 &&
+            finishStudy
         ) {
             return true;
         }
@@ -128,24 +129,24 @@ function EducationInfoContainer(props) {
     }
 
     useEffect(() => {
-        props.setValues({ "educationColumns": columns })
+        setValues({ "educationColumns": columns })
     }, [columns])
 
     useEffect(() => {
-        props.setValues({ "studies": studies })
+        setValues({ "studies": studies })
         setInputValues(initialState)
     }, [studies])
 
 
     return (
         <EducationInfoForm
-            {...data}
             handleChange={handleChange}
             addStudies={addStudies}
             resetStudies={resetStudies}
             hoverColumns={hoverColumns}
             unHoverColumns={unHoverColumns}
             handleColumns={handleColumns}
+            {...data}
         />
     )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function LangInfoForm(props) {
+function LangInfoForm({handleChange, addLangs, resetLangs, ...data}) {
     return (
         <div>
             <h3>Añade algunos <span className="highlight">idiomas</span></h3>
@@ -9,14 +9,14 @@ function LangInfoForm(props) {
                 <span id="langNameError" className="ErrorInput"></span>
                     <input
                         type="text"
-                        value={props.langName}
+                        value={data.langName}
                         name="langName"
                         maxLength="15"
-                        onChange={props.handleChange} />
+                        onChange={handleChange} />
                 </label>
 
                 <label> Nivel
-                    <select value={props.level} onChange={props.handleChange} name="level">
+                    <select value={data.level} onChange={handleChange} name="level">
                         <option value="Basico">Bajo</option>
                         <option value="Intermedio (Bajo)">Intermedio-bajo</option>
                         <option value="Intermedio (Alto)">Intermedio-alto</option>
@@ -29,18 +29,18 @@ function LangInfoForm(props) {
                     <input 
                         type="color" 
                         name="langColor"
-                        value={props.langColor} 
-                        onChange={props.handleChange} />
+                        value={data.langColor} 
+                        onChange={handleChange} />
                 </label>
 
                 <div className="f-e">
                     <button
                         className="btn"
-                        onClick={props.addLangs}>+ Añadir Idioma
+                        onClick={addLangs}>+ Añadir Idioma
                 </button>
                     <button
                         className="btn"
-                        onClick={props.resetLangs}>Eliminar Idioma
+                        onClick={resetLangs}>Eliminar Idioma
                 </button>
                 </div>
 

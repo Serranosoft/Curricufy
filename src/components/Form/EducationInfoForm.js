@@ -3,7 +3,7 @@ import grid1 from "../../styles/images/grid1.png";
 import grid2 from "../../styles/images/grid2.png";
 import grid3 from "../../styles/images/grid3.png";
 
-function EducationInfoForm(props) {
+function EducationInfoForm({handleChange, addStudies, resetStudies, hoverColumns, unHoverColumns, handleColumns, ...data}) {
 
     return (
         <div>
@@ -14,25 +14,25 @@ function EducationInfoForm(props) {
                         className="GridOptions" 
                         id="EducGrid1" 
                         src={grid1} 
-                        onClick={props.handleColumns}
-                        onMouseOver={props.hoverColumns}
-                        onMouseLeave={props.unHoverColumns}
+                        onClick={handleColumns}
+                        onMouseOver={hoverColumns}
+                        onMouseLeave={unHoverColumns}
                     />
                     <img
                         className="GridOptions"
                         id="EducGrid2"
                         src={grid2} 
-                        onClick={props.handleColumns}
-                        onMouseOver={props.hoverColumns}
-                        onMouseLeave={props.unHoverColumns}
+                        onClick={handleColumns}
+                        onMouseOver={hoverColumns}
+                        onMouseLeave={unHoverColumns}
                     />
                     <img 
                         className="GridOptions"
                         id="EducGrid3" 
                         src={grid3} 
-                        onClick={props.handleColumns}
-                        onMouseOver={props.hoverColumns}
-                        onMouseLeave={props.unHoverColumns}
+                        onClick={handleColumns}
+                        onMouseOver={hoverColumns}
+                        onMouseLeave={unHoverColumns}
                     />
                 </div>
             </div>
@@ -41,39 +41,39 @@ function EducationInfoForm(props) {
                     <span id="schoolError" className="ErrorInput"></span>
                     <input
                         type="text"
-                        value={props.schoolName}
+                        value={data.schoolName}
                         name="schoolName"
                         maxLength="35"
-                        onChange={props.handleChange} />
+                        onChange={handleChange} />
                 </label>
 
                 <label>Título:
                     <span id="titleError" className="ErrorInput"></span>
                     <input
                         type="text"
-                        value={props.titleName}
+                        value={data.datatitleName}
                         name="titleName"
                         maxLength="40"
-                        onChange={props.handleChange} />
+                        onChange={handleChange} />
                 </label>
 
                 <label>Fecha a finalizar
                     <span id="dateStudyError" className="ErrorInput"></span>
                     <input
                         type="date"
-                        value={props.dateStudy}
+                        value={data.dateStudy}
                         name="dateStudy"
-                        onChange={props.handleChange}
+                        onChange={handleChange}
                     />
 
                     <span>Estoy estudiando actualmente
                     <input
                             id="studying"
                             type="checkbox"
-                            checked={props.finishStudy}
-                            value={props.finishStudy}
+                            checked={data.finishStudy}
+                            value={data.finishStudy}
                             name="finishStudy"
-                            onChange={props.handleChange}
+                            onChange={handleChange}
                         />
                     </span>
                 </label>
@@ -83,13 +83,13 @@ function EducationInfoForm(props) {
                         type="submit"
                         value="+ Add a Study"
                         className="btn add"
-                        onClick={props.addStudies}> Añadir Estudio
+                        onClick={addStudies}> Añadir Estudio
                     </button>
 
                     <button
                         className="btn add"
                         value="Reset Studies"
-                        onClick={props.resetStudies}> Eliminar Estudio
+                        onClick={resetStudies}> Eliminar Estudio
                     </button>
                 </div>
 

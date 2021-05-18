@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import WebsInfoForm from "../Form/WebsInfoForm"
 
-function WebsInfoContainer(props) {
+function WebsInfoContainer({setValues}) {
 
     const initialValues = {
         webUrl: "", 
@@ -11,7 +11,9 @@ function WebsInfoContainer(props) {
     let websInfoData = [];
     
     const [inputValues, setInputValues] = useState(initialValues);
+    let { webUrl, webDescription } = inputValues;
     const [webInfo, addWebInfo] = useState([])
+    const data = {webUrl: webUrl, webDescription: webDescription}
 
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -20,8 +22,8 @@ function WebsInfoContainer(props) {
     
     const addWeb = (e) => {
         e.preventDefault();
-        if(inputValues.webUrl.length > 0 && inputValues.webDescription.length > 0) {
-            websInfoData.push(...webInfo, [inputValues.webUrl, inputValues.webDescription])
+        if(webUrl.length > 0 && webDescription.length > 0) {
+            websInfoData.push(...webInfo, [webUrl, webDescription])
             addWebInfo(websInfoData)
         } else {
             document.getElementById("webInfoError").innerHTML = "Introduce alguna web"
@@ -34,7 +36,7 @@ function WebsInfoContainer(props) {
     }
 
     useEffect(() => {
-        props.setValues({ "webs": webInfo })
+        setValues({ "webs": webInfo })
         setInputValues(initialValues)
     }, [webInfo])
 
@@ -43,9 +45,7 @@ function WebsInfoContainer(props) {
             handleChange={handleChange}
             addWeb={addWeb}
             resetWeb={resetWeb}
-            webUrl={inputValues.webUrl}
-            webDescription={inputValues.webDescription}
-
+            {...data}
         />
     )
 }

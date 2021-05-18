@@ -1,6 +1,6 @@
 import React from "react";
 
-function ExtraInfoForm(props) {
+function ExtraInfoForm({handleChange, addExtraInfos, resetExtraInfo, extraInfoName}) {
 
     return (
         <div>
@@ -13,8 +13,8 @@ function ExtraInfoForm(props) {
                         id="extraInfoInput"
                         type="text"
                         name="extraInfoName"
-                        value={props.extraInfoName}
-                        onChange={props.handleChange}
+                        value={extraInfoName}
+                        onChange={handleChange}
                         maxLength="78"
                     />
                 </label>
@@ -22,12 +22,12 @@ function ExtraInfoForm(props) {
                 <div className="f-a">
                     <button
                         className="btn"
-                        onClick={props.addExtraInfos}>+ Añadir Información
+                        onClick={addExtraInfos}>+ Añadir Información
                         </button>
 
                     <button
                         className="btn"
-                        onClick={props.resetExtraInfo}>Eliminar Información
+                        onClick={resetExtraInfo}>Eliminar Información
                         </button>
                 </div>
 

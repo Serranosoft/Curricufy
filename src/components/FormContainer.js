@@ -8,38 +8,38 @@ import ExtraInfoContainer from "./Containers/ExtraInfoContainer";
 import WebsInfoContainer from "./Containers/WebsInfoContainer";
 
 
-const FormContainer = (props) => {
+const FormContainer = ({setValues, data}) => {
     return (
         <div>
             <div id="cv_wrapper" className="slide-in-elliptic-top-fwd">
 
                 <GeneralInfoContainer
-                    setValues={props.setValues}
-                    data={props.data}
+                    setValues={setValues}
+                    data={data}
                 />
 
                 <SkillsInfoContainer
-                    setValues={props.setValues}
+                    setValues={setValues}
                 />
 
                 <EducationInfoContainer
-                    setValues={props.setValues}
+                    setValues={setValues}
                 />
 
                 <ExperienceInfoContainer
-                    setValues={props.setValues}
+                    setValues={setValues}
                 />
 
                 <LangInfoContainer
-                    setValues={props.setValues}
+                    setValues={setValues}
                 />
 
                 <WebsInfoContainer
-                    setValues={props.setValues}
+                    setValues={setValues}
                 />
 
                 <ExtraInfoContainer
-                    setValues={props.setValues}
+                    setValues={setValues}
                 />
 
             </div>

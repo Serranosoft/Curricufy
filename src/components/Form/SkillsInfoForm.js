@@ -1,7 +1,7 @@
 import React from "react";
 import RoundImg from "../../styles/images/round.png"
 
-function SkillsInfoForm(props) {
+function SkillsInfoForm({addSkills, resetSkills, handleRound, skillInput}) {
 
     return (
         <div>
@@ -11,7 +11,7 @@ function SkillsInfoForm(props) {
                     className="GridOptions"
                     id="roundImg"
                     src={RoundImg}
-                    onClick={props.handleRound}
+                    onClick={handleRound}
                 />
             </div>
             <span className="ErrorInput" id="skillsError"></span>
@@ -20,15 +20,15 @@ function SkillsInfoForm(props) {
                 <input
                     type="file"
                     className="handleFiles"
-                    ref={props.skillInput}
+                    ref={skillInput}
                     multiple />
                 <button
                     className="btn"
-                    onClick={props.addSkills}>+ Añadir Habilidad
+                    onClick={addSkills}>+ Añadir Habilidad
                 </button>
                 <button
                     className="btn"
-                    onClick={props.resetSkills}>Eliminar Habilidades
+                    onClick={resetSkills}>Eliminar Habilidades
                 </button>
             </form>
         </div>

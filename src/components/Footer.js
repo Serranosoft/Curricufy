@@ -7,7 +7,7 @@ function Footer() {
     return (
         <footer>
             <img src={icon} className="logo"/>
-            <span>Diseñado por <a href="twitter.com/ImScholz">Manuel Scholz</a></span>
+            <span>Diseñado por <a href="https://twitter.com/ImScholz">Manuel Scholz</a></span>
         </footer>
     )
 }

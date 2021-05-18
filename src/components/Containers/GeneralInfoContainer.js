@@ -5,7 +5,7 @@ import grid2Hover from "../../styles/images/grid2Hover.png";
 import grid1 from "../../styles/images/grid1.png";
 import grid2 from "../../styles/images/grid2.png";
 
-export function GeneralInfoContainer(props) {
+export function GeneralInfoContainer({setValues, data}) {
 
     const [column, changeColumn] = useState(true)
 
@@ -21,7 +21,7 @@ export function GeneralInfoContainer(props) {
     }
     
     useEffect(() => {
-        props.setValues({"generalColumn": column})
+        setValues({"generalColumn": column})
     }, [column])
 
     function hoverColumns(event) {
@@ -48,8 +48,8 @@ export function GeneralInfoContainer(props) {
 
     return (
         <GeneralInfoForm
-            data={props.data}
-            setValues={props.setValues}
+            data={data}
+            setValues={setValues}
             handleColumns={handleColumns}
             hoverColumns={hoverColumns}
             unHoverColumns={unHoverColumns}

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import ExtraInfoForm from "../Form/ExtraInfoForm"
 
-function ExtraInfoContainer(props) {
+function ExtraInfoContainer({setValues}) {
 
     let extraInfoData = [];
     const initialValues = {extraInfoName: ""}
     const [inputValues, setInputValues] = useState(initialValues);
+    let {extraInfoName} = inputValues;
     const [extraInfo, addExtraInfo] = useState([])
 
     const handleChange = (e) => {
@@ -15,8 +16,8 @@ function ExtraInfoContainer(props) {
     
     const addExtraInfos = (e) => {
         e.preventDefault();
-        if(inputValues.extraInfoName.length > 0) {
-            extraInfoData.push(...extraInfo, [inputValues.extraInfoName])
+        if(extraInfoName.length > 0) {
+            extraInfoData.push(...extraInfo, [extraInfoName])
             addExtraInfo(extraInfoData)
         } else {
             document.getElementById("extraInfoError").innerHTML = "Introduce alguna habilidad"
@@ -29,8 +30,8 @@ function ExtraInfoContainer(props) {
     }
 
     useEffect(() => {
-        props.setValues({ "extraInfo": extraInfo })
-        inputValues.extraInfoName = "";
+        setValues({ "extraInfo": extraInfo })
+        extraInfoName = "";
     }, [extraInfo])
 
     return (
@@ -38,7 +39,7 @@ function ExtraInfoContainer(props) {
             handleChange={handleChange}
             addExtraInfos={addExtraInfos}
             resetExtraInfo={resetExtraInfo}
-            extraInfoName={inputValues.extraInfoName}
+            extraInfoName={extraInfoName}
         />
     )
 }

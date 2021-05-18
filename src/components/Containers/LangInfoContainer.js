@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import LangInfoForm from "../Form/LangInfoForm";
 
-function LangInfoContainer(props) {
+function LangInfoContainer({setValues}) {
 
     const initialState = {
         langName: "", level: "Basico", langColor: "#a75685"
     }
     const [inputValues, setInputValues] = useState(initialState);
+    let { langName, level, langColor } = inputValues;
     const [langs, addLang] = useState([]);
 
     let langsData = [];
     let data = {
-        langName: inputValues.langName,
-        level: inputValues.level,
-        langColor: inputValues.langColor
+        langName: langName,
+        level: level,
+        langColor: langColor
     }
 
     const handleChange = (e) => {
@@ -23,9 +24,9 @@ function LangInfoContainer(props) {
 
     const addLangs = (e) => {
         e.preventDefault();
-        if(inputValues.langName.length > 0) {
+        if(langName.length > 0) {
             document.getElementById("langNameError").innerHTML = "";
-            langsData.push(...langs, [inputValues.langName, inputValues.level, inputValues.langColor])
+            langsData.push(...langs, [langName, level, langColor])
             addLang(langsData)
         } else {
             document.getElementById("langNameError").innerHTML = "Introduce un idioma"
@@ -38,16 +39,16 @@ function LangInfoContainer(props) {
     }
 
     useEffect(() => {
-        props.setValues({"langs": langs})
+        setValues({"langs": langs})
         setInputValues(initialState)
-    },[langs])
+    }, [langs])
     
     return (
         <LangInfoForm
-                {...data}
                 handleChange={handleChange}
                 addLangs={addLangs}
                 resetLangs={resetLangs}
+                {...data}
             />
     )
 }

@@ -3,7 +3,7 @@ import SkillsInfoForm from "../Form/SkillsInfoForm";
 import RoundImg from "../../styles/images/round.png"
 import RoundImgActive from "../../styles/images/roundActive.png"
 
-export function SkillsInfoContainer(props) {
+export function SkillsInfoContainer({setValues}) {
 
     let skillInput = React.createRef();
     const [roundEffect, changeRoundEffect] = useState(false)
@@ -17,7 +17,7 @@ export function SkillsInfoContainer(props) {
             });
             if (skillsAux.length <= 7) {
                 document.getElementById("skillsError").innerHTML = ""
-                props.setValues({ "skills": skillsAux })
+                setValues({ "skills": skillsAux })
             } else {
                 document.getElementById("skillsError").innerHTML = "Solo puedes agregar hasta 7 habilidades"
             }
@@ -28,7 +28,7 @@ export function SkillsInfoContainer(props) {
 
     function resetSkills(e) {
         e.preventDefault();
-        props.setValues({ "skills": [] });
+        setValues({ "skills": [] });
     }
 
     function handleRound() {
@@ -39,7 +39,7 @@ export function SkillsInfoContainer(props) {
     }
 
     useEffect(() => {
-        props.setValues({ "round": roundEffect })
+        setValues({ "round": roundEffect })
     }, [roundEffect])
 
     return (
