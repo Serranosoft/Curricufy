@@ -11,7 +11,7 @@ function Footer() {
 
                     <FooterTitle><Link href="/">Curricufy</Link></FooterTitle>
 
-                    <FooterDescr>La solución mas fácil para decorar tus webs de Wordpress para Adsense o Amazon Afiliados.</FooterDescr>
+                    <FooterDescr>Rellena y personaliza currículums online para cualquier tipo de empleo con una estructura elegante, moderna y diferente a todos los demás.</FooterDescr>
                 </div>
                 <Menu>
                     <MenuColumn>
