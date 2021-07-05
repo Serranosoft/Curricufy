@@ -58,7 +58,7 @@ export default function Home() {
           <LandingInfoBox>
             <LandingInfoBoxTitle>Plantillas específicas para cada empleo</LandingInfoBoxTitle>
             <LandingInfoBoxDescr>Elige el cv correspondiente a tu trabajo y rellena las distintas secciones.<br /><br />
-              Indica de una manera clara las habilidades, aptitudes, experiencia laboral y el contenido que que si se valora en una entrevista de trabajo.</LandingInfoBoxDescr>
+              Indica de una manera clara las habilidades, aptitudes, experiencia laboral y el contenido que si se valora en una entrevista de trabajo.</LandingInfoBoxDescr>
           </LandingInfoBox>
         </LandingInfoWrapper>
         <Link href="/curriculums"><LandingInfoBoxButton>Rellenar mi currículum</LandingInfoBoxButton></Link>
