@@ -17,18 +17,15 @@ function Footer() {
                     <MenuColumn>
                         <MenuColumnTitle>PRODUCTO</MenuColumnTitle>
                         <Link href="/">Aplicación</Link>
-                        <Link href="/iniciar-sesion">Iniciar Sesión</Link>
-                        <Link href="/registro">Registro</Link>
                     </MenuColumn>
                     <MenuColumn>
                         <MenuColumnTitle>FUNDADOR</MenuColumnTitle>
-                        <Link href="/blog">Blog</Link>
                         <a href="https://twitter.com/ImScholz" target="_blank">Twitter</a>
                         <a href="https://www.linkedin.com/in/manuel-serrano-scholz/" target="_blank">LinkedIn</a>
                     </MenuColumn>
                     <MenuColumn>
                         <MenuColumnTitle>PROYECTOS</MenuColumnTitle>
-                        <a href="https://curricufy.manu-scholz.com" target="_blank">Curricufy</a>
+                        <a href="https://bloques-gutenberg.com" target="_blank">Bloques Gutenberg</a>
                         <a href="https://memorify.manu-scholz.com" target="_blank">Memorify</a>
                         <a href="https://spotify.manu-scholz.com" target="_blank">Fake Spotify</a>
                     </MenuColumn>
