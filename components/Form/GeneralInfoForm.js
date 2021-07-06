@@ -1,4 +1,4 @@
-import { ProfileImg, Input, FlexBetween, GridOptions, Grid2, Label, HandleFiles } from "../../styles/StyledComponents"
+import { ProfileImg, Input, FlexBetween, GridOptions, Grid2, Label, HandleFiles, SectionTitle } from "../../styles/StyledComponents"
 
 function GeneralInfoForm({ data, setValues, handleColumns, hoverColumns, unHoverColumns }) {
 
@@ -6,8 +6,8 @@ function GeneralInfoForm({ data, setValues, handleColumns, hoverColumns, unHover
         <>
             <ProfileImg src={data.avatar === "" ? "/images/user.png" : data.avatar} />
             <HandleFiles type="file" name="avatar" onChange={setValues} style={{margin: "16px auto"}}></HandleFiles>
-            <FlexBetween>
-                <h3>Información general sobre ti</h3>
+            <FlexBetween gridOpt>
+                <SectionTitle>Información general sobre ti</SectionTitle>
                 <div>
                     <GridOptions
                         id="GenGrid1"

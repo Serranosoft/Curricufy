@@ -26,11 +26,11 @@ export default function Home() {
 
       </Head>
       <HeroWrapper>
-        <HomeTitle>Crea un CV y encuentra empleo fácil y rápido</HomeTitle>
+        <HomeTitle>Crea un CV y encuentra empleo fácil y rápido 📝</HomeTitle>
         <HomeSubtitle>Electricista ⚡ | Cocinero 👨‍🍳 | Profesor 👩‍🏫 | Estudiante 👨‍🎓 | Obrero 👷 | Programador 💻</HomeSubtitle>
         <Link href="/curriculums"><HeroButton>Elegir y rellenar mi CV</HeroButton></Link>
       </HeroWrapper>
-      <Svg2 src="/images/decoration/portapapeles.svg" />
+      {/* <Svg2 src="/images/decoration/portapapeles.svg" /> */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
         <path fill="#a96da3" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,149.3C320,139,400,85,480,80C560,75,640,117,720,133.3C800,149,880,139,960,122.7C1040,107,1120,85,1200,96C1280,107,1360,149,1400,170.7L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
       </svg>
@@ -75,26 +75,26 @@ const HeroWrapper = styled.section`
     background-color: #A96DA3;
     @media(max-width: 768px) {
         grid-template-columns: 1fr;
-        margin-bottom: 24px;
     }
 `
 
 const HomeTitle = styled.p`
-    font-size: 60px;
+    font-size: 56px;
     font-family: 'Cabin', sans-serif;
     color: #242424;
     text-align: center;
     margin: 0 auto;
     @media(max-width: 768px) {
         padding: 36px 8px 8px 8px;
-        font-size: 33px;
+        font-size: 28px;
         line-height: 1.3;
         word-spacing: 1px;
     }
 `
 
 const HomeSubtitle = styled.p`
-    width: 950px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
     margin: 0px auto 16px auto;
     font-size: 20px;
     text-align: center;
@@ -102,7 +102,6 @@ const HomeSubtitle = styled.p`
     @media(max-width: 768px) {
         padding: 8px;
         font-size: 14px;
-        width: 100%;
     }
 `
 
@@ -121,16 +120,11 @@ const HeroButton = styled.button`
     &:hover {
         transform: scale(0.95);
     }
-    @media(max-width: 768px) {
+    @media(max-width: 920px) {
       width: 50%;
+      padding: 16px;
+      
     }
-`
-
-const Svg2 = styled.img`
-    width: 40px;
-    position: absolute;
-    top: 110px;
-    right: 130px;
 `
 
 const HomeSection = styled.section`
@@ -145,9 +139,9 @@ const HomeSection = styled.section`
 
 const JobsPortal = styled.div`
   width: 70%;
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto 24px auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin: 0 auto 0px auto;
 `
 
 const SubtitleSections = styled.p`
@@ -207,7 +201,7 @@ const LandingInfoBoxDescr = styled.span`
 
 const LandingInfoBoxButton = styled.button`
   display: block;
-  width: 20%;
+  width: 30%;
   padding: 20px 16px;
   margin: 24px auto;
   background: #a96da3;
@@ -222,8 +216,9 @@ const LandingInfoBoxButton = styled.button`
   &:hover {
       transform: scale(0.95);
   }
-  @media(max-width: 768px) {
-    width: 50%;
+  @media(max-width: 920px) {
+    width: 75%;
+    padding: 16px;
   }
 `
 
@@ -232,4 +227,8 @@ const H1 = styled.h1`
  font-size: 17px;
  color: #242424;
  font-weight: 300;
+ @media(max-width: 768px) {
+  font-size: 13.5px;
+}
+
 `

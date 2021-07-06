@@ -133,6 +133,9 @@ const CreateCvWrapper = styled.div`
     margin: 0px auto 32px auto;
     gap: 16px;
     background: #dbdbdb;
+    @media(max-width: 920px) {
+        grid-template-columns: 1fr;
+    }
 `
 const HeroWrapper = styled.section`
     width: 100%;
@@ -141,7 +144,6 @@ const HeroWrapper = styled.section`
     background-color: #A96DA3;
     @media(max-width: 768px) {
         grid-template-columns: 1fr;
-        margin-bottom: 24px;
     }
 `
 

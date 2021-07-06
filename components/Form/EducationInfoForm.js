@@ -4,7 +4,7 @@ function EducationInfoForm({ handleChange, addStudies, resetStudies, hoverColumn
 
     return (
         <>
-            <FlexBetween>
+            <FlexBetween gridOpt>
                 <h3>Tus estudios academicos</h3>
                 <div>
                     <GridOptions

@@ -3,6 +3,12 @@ import styled from '@emotion/styled';
 
 /* INPUTS */
 
+const SectionTitle = styled.p`
+    font-size: 19px;
+    font-weight: bold;
+
+`
+
 const Input = styled.input`
     display: block;
     width: 80%;
@@ -14,6 +20,10 @@ const Input = styled.input`
     outline: 0;
     &:focus {
         border-color: black;
+    }
+    @media(max-width: 920px) {
+        width: 95%;
+        margin: 0 auto;
     }
 `
 
@@ -28,6 +38,10 @@ const TextArea = styled.textarea`
     border: 3px solid #575859;
     &:focus {
         border-color: black;
+    }
+    @media(max-width: 920px) {
+        width: 95%;
+        margin: 0 auto;
     }
 `
 
@@ -47,6 +61,10 @@ const Select = styled.select`
         background-color: #151719;
         color: white;
     }
+    @media(max-width: 920px) {
+        width: 95%;
+        margin: 0 auto;
+    }
 `
 
 const ChooseColor = styled.input`
@@ -59,6 +77,10 @@ const ChooseColor = styled.input`
     border: 3px solid #373c40;
     outline: 0;
     height: 40px;
+    @media(max-width: 920px) {
+        width: 95%;
+        margin: 0 auto;
+    }
 `
 
 const Label = styled.label`
@@ -68,6 +90,12 @@ const Label = styled.label`
         display: flex;
         justify-content: center;
         font-size: 13px;
+    }
+    @media(max-width: 920px) {
+        text-align: center;
+        & > span {
+            margin: 8px 0;
+        }
     }
 `
 
@@ -102,6 +130,10 @@ const HandleFiles = styled.input`
     text-align: center;
     font-weight: bold;
     cursor: pointer;
+    @media(max-width: 920px) {
+        width: 85%;
+        padding: 12px 0;
+    }
 `
 
 const ProfileImg = styled.img`
@@ -126,6 +158,13 @@ const FlexEvenly = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    @media(max-width: 920px) {
+        flex-direction: ${props =>
+        props.gridOpt ? 'column' : 'row'};
+        & > button{
+            margin: 8px 0;
+        }
+    }
 `
 
 const FlexAround = styled.div`
@@ -138,6 +177,11 @@ const FlexBetween = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @media(max-width: 920px) {
+        flex-direction: ${props =>
+        props.gridOpt ? 'column' : 'row'};
+    }
+    
 `
 
 const FlexCenter = styled.div`
@@ -161,6 +205,9 @@ const Grid2 = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
+    @media(max-width: 920px) {
+        grid-template-columns: 1fr;
+    }
 `
 const Grid3 = styled.div`
     width: 95%;
@@ -168,6 +215,9 @@ const Grid3 = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
     gap: 16px;
+    @media(max-width: 920px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 const Sticky = styled.div`
@@ -193,5 +243,6 @@ const SectionLabel = styled.h3`
 export {
     ErrorInput, HandleFiles, ProfileImg, GridOptions, FlexEvenly, FlexAround, FlexBetween, FlexCenter, Grid2,
     Grid3, Sticky, Input, TextArea, Label, Button, Select, ChooseColor, FlexColumn, DisplayBoldInfo, SectionLabel,
+    SectionTitle
 
 }

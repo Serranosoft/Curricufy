@@ -59,7 +59,6 @@ const FormContainer = ({ setValues, data, sections }) => {
         <div className="slide-in-elliptic-top-fwd">
 
             {GetSections().map((el) => {
-                console.log(el);
                 return (
                     <>
                         {el}

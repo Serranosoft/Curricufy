@@ -13,8 +13,6 @@ import {FlexEvenly, ChooseColor, Label, Sticky} from "../styles/StyledComponents
 
 function DisplayCv({ sections, name, email, phone, web, studies, educationColumns, works, skills, round, langs, avatar, webs, extraInfo, generalColumn }) {
 
-  console.log(sections);
-
   const [BgColor, setBgColor] = useState("#797cad");
 
   function printDocument(e) {
@@ -71,7 +69,7 @@ function DisplayCv({ sections, name, email, phone, web, studies, educationColumn
   return (
     <div>
       <Sticky className="bounce-in-top" style={{ animationDelay: "0.8s" }}>
-        <FlexEvenly>
+        <FlexEvenly gridOpt>
           <DownloadButton id="downloadAsPdf" onClick={printDocument}>DESCARGAR EN PDF</DownloadButton>
           <DownloadButton id="downloadAsImg" onClick={printDocument}>DESCARGAR EN IMAGEN</DownloadButton>
         </FlexEvenly>
@@ -133,6 +131,10 @@ const DisplayWrapper = styled.div`
   text-align: center;
   background: white;
   color: black;
+  @media(max-width: 920px) {
+    width: 100%;
+    margin: 0 auto;
+  }
 `
 
 const DownloadButton = styled.button`

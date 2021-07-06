@@ -21,8 +21,8 @@ function ExtraInfoForm({ handleChange, addExtraInfos, resetExtraInfo, extraInfoN
                 </Label>
 
                 <FlexAround>
-                    <Button onClick={addExtraInfos}>+ Añadir Información </Button>
-                    <Button onClick={resetExtraInfo}>- Eliminar Información </Button>
+                    <Button onClick={addExtraInfos}>+ Añadir Info </Button>
+                    <Button onClick={resetExtraInfo}>- Quitar Info </Button>
                 </FlexAround>
             </FlexColumn>
         </>
