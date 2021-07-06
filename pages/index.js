@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Plantillas de Currículum Vitae modernas y personalizables para rellenar online | Curricufy</title>
+        <title>Plantillas de Currículum Vitae Elegantes y Personalizables para Rellenar y Descargar Online | Curricufy</title>
         <meta name="description" content="Rellena y personaliza currículums online para cualquier tipo de empleo con una estructura elegante, moderna y diferente a todos los demás." />
         <link rel="icon" href="/curricufy.ico" />
 
@@ -13,7 +13,7 @@ export default function Home() {
         <meta name="twitter:description" content="Rellena y personaliza currículums online para cualquier tipo de empleo con una estructura elegante, moderna y diferente a todos los demás." />
         <meta name="twitter:image" content="http://cufy.manu-scholz.com/wp-content/uploads/2021/07/curricufy-metadata.png" />
 
-        <meta name="og:title" content="Plantillas de Currículum Vitae modernas y personalizables para rellenar online | Curricufy" />
+        <meta name="og:title" content="Plantillas de Currículum Vitae Elegantes y Personalizables para Rellenar y Descargar Online | Curricufy" />
         <meta name="og:description" content="Rellena y personaliza currículums online para cualquier tipo de empleo con una estructura elegante, moderna y diferente a todos los demás." />
         <meta property="og:image" content="http://cufy.manu-scholz.com/wp-content/uploads/2021/07/curricufy-metadata.png" />
         <meta name="og:image" content="http://cufy.manu-scholz.com/wp-content/uploads/2021/07/curricufy-metadata.png" />
@@ -30,7 +30,6 @@ export default function Home() {
         <HomeSubtitle>Electricista ⚡ | Cocinero 👨‍🍳 | Profesor 👩‍🏫 | Estudiante 👨‍🎓 | Obrero 👷 | Programador 💻</HomeSubtitle>
         <Link href="/curriculums"><HeroButton>Elegir y rellenar mi CV</HeroButton></Link>
       </HeroWrapper>
-      {/* <Svg2 src="/images/decoration/portapapeles.svg" /> */}
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
         <path fill="#a96da3" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,149.3C320,139,400,85,480,80C560,75,640,117,720,133.3C800,149,880,139,960,122.7C1040,107,1120,85,1200,96C1280,107,1360,149,1400,170.7L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
       </svg>
@@ -129,8 +128,8 @@ const HeroButton = styled.button`
 
 const HomeSection = styled.section`
   width: 100%;
-  height: 100vh;
   margin: 0 auto;
+  padding-bottom: 20px;
   background-color: #f2f2f2;
   @media(max-width: 768px) {
     margin-top: 8px;
