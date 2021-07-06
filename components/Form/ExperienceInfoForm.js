@@ -1,10 +1,10 @@
-import {Grid2, FlexBetween, ErrorInput, Label, Input, Button, TextArea} from "../../styles/StyledComponents"
+import {Grid2, FlexBetween, ErrorInput, Label, Input, Button, TextArea, SectionTitle} from "../../styles/StyledComponents"
 
 function ExperienceInfoForm({handleChange, addWorks, resetWorks, ...data}) {
 
     return (
         <div>
-            <h3>¿Quieres añadir experiencia laboral?</h3>
+            <SectionTitle>¿Quieres añadir experiencia laboral?</SectionTitle>
             <Grid2>
                 <Label>Empresa:
                     <ErrorInput id="companyNameError"></ErrorInput>

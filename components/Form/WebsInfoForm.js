@@ -1,11 +1,11 @@
-import { ErrorInput, Label, Input, TextArea, FlexEvenly, Button, FlexColumn } from "../../styles/StyledComponents"
+import { ErrorInput, Label, Input, TextArea, FlexEvenly, Button, FlexColumn, SectionTitle } from "../../styles/StyledComponents"
 
 
 function WebsInfoForm({ handleChange, addWeb, resetWeb, ...data }) {
 
     return (
         <>
-            <h3>¿Quieres agregar tus páginas web?</h3>
+            <SectionTitle>¿Quieres agregar tus páginas web?</SectionTitle>
             <FlexColumn>
                 <Label>
                     URL de la página web

@@ -1,11 +1,11 @@
-import { GridOptions, FlexBetween, Input, ErrorInput, Grid2, Button, Label } from "../../styles/StyledComponents"
+import { GridOptions, FlexBetween, Input, ErrorInput, Grid2, Button, Label, SectionTitle } from "../../styles/StyledComponents"
 
 function EducationInfoForm({ handleChange, addStudies, resetStudies, hoverColumns, unHoverColumns, handleColumns, ...data }) {
 
     return (
         <>
             <FlexBetween gridOpt>
-                <h3>Tus estudios academicos</h3>
+                <SectionTitle>Tus estudios academicos</SectionTitle>
                 <div>
                     <GridOptions
                         id="EducGrid1"

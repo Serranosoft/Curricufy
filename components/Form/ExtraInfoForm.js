@@ -1,10 +1,10 @@
-import { FlexAround, Button, Label, Input, ErrorInput, FlexColumn } from "../../styles/StyledComponents"
+import { FlexAround, Button, Label, Input, ErrorInput, FlexColumn, SectionTitle } from "../../styles/StyledComponents"
 
 function ExtraInfoForm({ handleChange, addExtraInfos, resetExtraInfo, extraInfoName }) {
 
     return (
         <>
-            <h3>¿Quieres agregar otras habilidades?</h3>
+            <SectionTitle>¿Quieres agregar otras habilidades?</SectionTitle>
             <FlexColumn>
                 <Label>
                     Describe

@@ -1,4 +1,4 @@
-import {FlexBetween, GridOptions, ErrorInput, FlexAround, HandleFiles, Button} from "../../styles/StyledComponents"
+import {FlexBetween, GridOptions, ErrorInput, FlexAround, HandleFiles, Button, SectionTitle} from "../../styles/StyledComponents"
 
 
 function SkillsInfoForm({addSkills, resetSkills, handleRound, skillInput}) {
@@ -6,7 +6,7 @@ function SkillsInfoForm({addSkills, resetSkills, handleRound, skillInput}) {
     return (
         <>
             <FlexBetween>
-                <h3>Añade unos logos para tus habilidades</h3>
+                <SectionTitle>Añade unos logos para tus habilidades</SectionTitle>
                 <GridOptions
                     id="roundImg"
                     src="/images/round.svg"

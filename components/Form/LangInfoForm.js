@@ -1,9 +1,9 @@
-import { Grid2, Label, ErrorInput, Button, Select, FlexBetween, Input, ChooseColor } from "../../styles/StyledComponents"
+import { Grid2, Label, ErrorInput, Button, Select, FlexBetween, Input, ChooseColor, SectionTitle } from "../../styles/StyledComponents"
 
 function LangInfoForm({ handleChange, addLangs, resetLangs, ...data }) {
     return (
         <>
-            <h3>Añade algunos idiomas</h3>
+            <SectionTitle>Añade algunos idiomas</SectionTitle>
             <Grid2 id="langInfoForm">
                 <Label> Idioma
                     <ErrorInput id="langNameError"></ErrorInput>

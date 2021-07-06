@@ -85,8 +85,8 @@ const HomeTitle = styled.p`
     text-align: center;
     margin: 0 auto;
     @media(max-width: 768px) {
-        padding: 36px 8px 8px 8px;
-        font-size: 28px;
+        padding: 36px 8px 16px 8px;
+        font-size: 32px;
         line-height: 1.3;
         word-spacing: 1px;
     }
@@ -94,14 +94,14 @@ const HomeTitle = styled.p`
 
 const HomeSubtitle = styled.p`
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr))
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
     margin: 0px auto 16px auto;
     font-size: 20px;
     text-align: center;
     word-spacing: 7px;
     @media(max-width: 768px) {
         padding: 8px;
-        font-size: 14px;
+        font-size: 15px;
     }
 `
 
@@ -121,7 +121,7 @@ const HeroButton = styled.button`
         transform: scale(0.95);
     }
     @media(max-width: 920px) {
-      width: 50%;
+      width: 75%;
       padding: 16px;
       
     }
@@ -142,6 +142,13 @@ const JobsPortal = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   margin: 0 auto 0px auto;
+  @media(max-width: 920px) {
+    & > img {
+      height: 85px;
+      margin: 0 auto;
+
+    }
+  }
 `
 
 const SubtitleSections = styled.p`
