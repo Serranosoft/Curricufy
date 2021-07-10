@@ -10,8 +10,6 @@ import { getAllSlugs } from '../../lib/api'
 
 function createCv(props) {
 
-    console.log(props.post);
-
     const [data, onUpdate] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
         {
