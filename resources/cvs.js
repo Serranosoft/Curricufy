@@ -66,7 +66,7 @@ const cvs = [
     
     {
         id: 7,
-        slug: "para-niñera",
+        slug: "para-ninera",
         title: "Currículum para Niñera/o",
         emoji: "👩‍👧‍👦",
         descr: "Currículum para niñeros y niñeras en el sector privado o empleo como autónomo particular",
