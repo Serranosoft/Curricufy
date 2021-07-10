@@ -29,7 +29,7 @@ const cvs = [
         title: "Currículum para Maestro / Profesor",
         emoji: "👩‍🏫",
         descr: "Currículum para maestros y profesores en el sector privado, profesores a tiempo parcial y profesores particulares",
-        sections: [1, 3, 4, 5, 7]
+        sections: [1, 2, 3, 4, 5, 7]
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ const cvs = [
         title: "Currículum para Cocinero/a",
         emoji: "👨‍🍳",
         descr: "Currículum para cocineros, ayudantes de cocina, \"pinche de cocina\" para restaurantes, bares y taperías",
-        sections: [1, 3, 4, 5, 7]
+        sections: [1, 2, 3, 4, 5, 6, 7]
     },
     {
         id: 4,

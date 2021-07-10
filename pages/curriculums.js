@@ -58,12 +58,4 @@ const CvsGrid = styled.div`
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 50px;
     margin: 0px auto 24px auto;
-    
-`
-
-const Svg3 = styled.img`
-    width: 40px;
-    position: absolute;
-    top: 200px;
-    right: 600px;
 `

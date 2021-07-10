@@ -1,12 +1,13 @@
 import Head from 'next/head'
 import Link from "next/link"
 import styled from '@emotion/styled';
+import CvTemplate from '../components/cvTemplate';
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Curricufy | Plantillas de Currículums Elegantes y Personalizables para Rellenar y Descargar Online</title>
+        <title>Plantillas de Currículums Elegantes y Personalizables para Rellenar y Descargar Online</title>
         <meta name="description" content="Rellena y personaliza currículums online para cualquier tipo de empleo con una estructura elegante, moderna y diferente a todos los demás." />
         <link rel="icon" href="/curricufy.ico" />
 
@@ -35,10 +36,10 @@ export default function Home() {
 
       <SubtitleSections>PORTALES DE EMPLEO DE CONFIANZA</SubtitleSections>
       <JobsPortal>
-        <JobPortalImg src="/images/decoration/infojobs.png" />
-        <JobPortalImg src="/images/decoration/infoempleo.png" />
-        <JobPortalImg src="/images/decoration/tecnoempleo.png" />
         <JobPortalImg src="/images/decoration/linkedin.png" />
+        <JobPortalImg src="/images/decoration/infojobs.png" />
+        <JobPortalImg src="/images/decoration/tecnoempleo.png" />
+        <JobPortalImg src="/images/decoration/infoempleo.png" />
       </JobsPortal>
       <HomeSection>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 270">
@@ -60,7 +61,50 @@ export default function Home() {
           </LandingInfoBox>
         </LandingInfoWrapper>
         <LandingInfoBoxButton><Link href="/curriculums" passHref><a>Rellenar mi currículum</a></Link></LandingInfoBoxButton>
+        <GalleryWrapper>
+          <H2>PLANTILLAS DE CV</H2>
+          <div>
+            <BigImg src="/images/decoration/CV.jpeg" alt="Ejemplo de curriculum creativo" />
+            <BigImg src="/images/decoration/CV2.jpeg" alt="Ejemplo de cv moderno" />
+            <BigImg src="/images/decoration/CV3.jpeg" alt="Ejemplo de plantilla de cv simple" />
+          </div>
+        </GalleryWrapper>
+        <FullWidthSection>
+          <Grid4Columns>
+            <div>
+              <FullWidthSectionTitle>Diseños Simples</FullWidthSectionTitle>
+              <LandingInfoBoxDescr style={{ color: "lightgray" }}>Diseños innovadores, simples y limpios de Currículum Vitae para todos los trabajos:<br /><br />
+                Ejemplos de cv con formato europeo aptos para rellenar con frases, datos de interés e información sobre tus
+                aptitudes mas importantes para conseguir el empleo que estas buscando.</LandingInfoBoxDescr>
+            </div>
+            <div>
+              <FullWidthSectionTitle>Plantillas Creativas</FullWidthSectionTitle>
+              <LandingInfoBoxDescr style={{ color: "lightgray" }}>Crea y usa plantillas creativas en Curricufy para postular en tu empleo:<br /><br />
+                Plantillas de curriculo profesionales, empresariales y creativas con diseños modernos
+                para hacer y descargar gratis.</LandingInfoBoxDescr>
+            </div>
+            <div>
+              <FullWidthSectionTitle>Currículums Editables</FullWidthSectionTitle>
+              <LandingInfoBoxDescr style={{ color: "lightgray" }}>Agrega frases creativas, datos interesantes y únicos sobre ti con las secciones específicas
+                de los cv de Curricufy:<br /><br />
 
+                Secciones especiales para el currículum de contador, camarero, programador que te ayudarán
+                a entregar una carta laboral única e interesante.</LandingInfoBoxDescr>
+            </div>
+            <div>
+              <FullWidthSectionTitle>Descargar Gratis</FullWidthSectionTitle>
+              <LandingInfoBoxDescr style={{ color: "lightgray" }}>En Curricufy puedes rellenar, personalizar y descargar todos los diseños y cvs gratis: <br /><br />
+
+                Haz clic en el botón de descargar en PDF, descargar en imágen o descargar en Word para
+                bajarlo en tu ordenador y envíarlo.</LandingInfoBoxDescr>
+            </div>
+          </Grid4Columns>
+          <CvsGrid>
+            <CvTemplate emoji={'🧑‍🎓'} title={"Currículum para Estudiante"} descr={"Currículum para estudiantes que están todavía estudiando, recien graduados o personas para un primer empleo"} slug={"para-estudiante"} />
+            <CvTemplate emoji={'🍽️'} title={"Currículum para Camarero/a"} descr={"Currículum para camareros de barra, exterior y sumillers en bares, restaurantes y taperías"} slug={"para-camarero"} />
+            <CvTemplate emoji={'🏍️📦'} title={"Currículum para Repartidor/a"} descr={"Currículum para repartidores de alimentación u paquetería en Amazon, Uber o Glovo"} slug={"para-repartidor"} />
+          </CvsGrid>
+        </FullWidthSection>
       </HomeSection>
     </>
   )
@@ -123,8 +167,8 @@ const HeroButton = styled.button`
       padding: 16px 24px;
     }
     @media(max-width: 920px) {
-      width: 75%;
-      padding: 16px;
+      width: 80%;
+      padding: 8px 16px;
       
     }
 `
@@ -200,6 +244,7 @@ const LandingInfoBoxDescr = styled.span`
   color: #242424;
   font-weight: 300;
   margin: 8px auto;
+  line-height: 1.3;
   & > a {
     color: #34d399;
   }
@@ -211,7 +256,7 @@ const LandingInfoBoxDescr = styled.span`
 const LandingInfoBoxButton = styled.button`
   display: block;
   width: 30%;
-  margin: 24px auto;
+  margin: 24px auto 0px auto;
   background: #a96da3;
   font-size: 17px;
   text-align: center;
@@ -229,8 +274,8 @@ const LandingInfoBoxButton = styled.button`
     padding: 20px 16px;
   }
   @media(max-width: 920px) {
-    width: 75%;
-    padding: 16px;
+    width: 80%;
+    padding: 8px 16;
   }
 `
 
@@ -241,6 +286,73 @@ const H1 = styled.h1`
  font-weight: 300;
  @media(max-width: 768px) {
   font-size: 13.5px;
-}
+  }
+`
 
+const H2 = styled.h2`
+  word-spacing: 2px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #242424;
+  text-align: center;
+  margin-top: 0;
+`
+
+const GalleryWrapper = styled.div`
+  position: relative;
+  top: 50px;
+  width: 78%;
+  margin: 8px auto 0 auto;
+  background-color: #f2f2f2;
+  border-radius: 30px;
+  padding: 20px;
+  & > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+  }
+  @media(max-width: 768px) {
+    width: 95%;
+    & > div {
+      grid-template-columns: 1fr;
+    }
+  }
+`
+
+const BigImg = styled.img`
+  width: 100%;
+  height: 100%;
+`
+
+const FullWidthSection = styled.div`
+  width: 100%;
+  padding: 80px 120px;
+  margin-top: -30px;
+  background: #421a42;
+  @media(max-width: 768px) {
+    padding: 80px 16px;
+  }
+`
+
+const Grid4Columns = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin: 8px auto 40px auto;
+`
+
+const FullWidthSectionTitle = styled.h3`
+  color: white;
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.6px;
+  word-spacing: 3px;
+`
+
+const CvsGrid = styled.div`
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+    margin: 40px auto 24px auto;
 `

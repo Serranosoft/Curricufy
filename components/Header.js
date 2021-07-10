@@ -8,7 +8,7 @@ function Header() {
         <HeaderSection>
             <Link href="/">
                 <a>
-                    <Logo src="/images/curricufy.png" /><HeaderTitle>urricufy</HeaderTitle>
+                    <Logo src="/images/curricufy.png" alt="Curricufy.com - crear cv" /><HeaderTitle>urricufy</HeaderTitle>
                 </a>
             </Link>
         </HeaderSection>
