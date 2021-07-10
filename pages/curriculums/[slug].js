@@ -5,8 +5,12 @@ import styled from '@emotion/styled';
 import FormContainer from "../../components/FormContainer";
 import DisplayCv from "../../components/DisplayCv";
 import cvs from '../../resources/cvs';
+import { getPostBySlug } from '../../lib/api'
+import { getAllSlugs } from '../../lib/api'
 
 function createCv(props) {
+
+    console.log(props.post);
 
     const [data, onUpdate] = useReducer(
         (state, newState) => ({ ...state, ...newState }),
@@ -79,16 +83,16 @@ function createCv(props) {
             onUpdate({ [name]: newValue });
         }
     };
-    const metaDataDescription = `Rellena y echa tu ${props.title} y encuentra empleo con un modelo elegante y bien estructurado`;
+    const metaDataDescription = `Rellena y echa tu ${props.cvs.title} y encuentra empleo con un modelo elegante y bien estructurado`;
     return (
         <>
             <Head>
-                <title>{props.title} | Curricufy</title>
+                <title>{props.cvs.title} | Curricufy</title>
                 <meta name="description" content={metaDataDescription}/>
                 <link rel="icon" href="/curricufy.ico" />
             </Head>
             <HeroWrapper>
-                <HomeTitle>Rellena tu {props.title} {props.emoji}</HomeTitle>
+                <HomeTitle>Rellena tu {props.cvs.title} {props.cvs.emoji}</HomeTitle>
             </HeroWrapper>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 190">
                 <path fill="#a96da3" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,149.3C320,139,400,85,480,80C560,75,640,117,720,133.3C800,149,880,139,960,122.7C1040,107,1120,85,1200,96C1280,107,1360,149,1400,170.7L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
@@ -97,29 +101,35 @@ function createCv(props) {
                 <FormContainer
                     setValues={setValues}
                     data={data}
-                    sections={props.sections}
+                    sections={props.cvs.sections}
                 />
-                <DisplayCv sections={props.sections} {...data} />
+                <DisplayCv sections={props.cvs.sections} {...data} />
             </CreateCvWrapper>
+            <ArticleWrapper>
+                <Content dangerouslySetInnerHTML={{ __html: props.post.content}} />
+            </ArticleWrapper>
         </>
     )
 }
 
 export const getStaticPaths = async () => {
+
+    const allPosts = await getAllSlugs();
+
     return {
-        paths: cvs.map((el) => ({
-            params: {
-                slug: el.slug
-            },
-        })),
+        paths: allPosts.edges.map(({ node }) => `/curriculums/${node.slug}`),
         fallback: false
     }
 }
 
 export const getStaticProps = async (context) => {
     const slug = context.params.slug;
+    const data = await getPostBySlug(context.params.slug)
     return {
-        props: cvs.find((el) => el.slug === slug),
+        props: {
+            cvs: cvs.find((el) => el.slug === slug),
+            post: data
+        }, 
     };
 }
 
@@ -158,5 +168,64 @@ const HomeTitle = styled.h1`
         font-size: 33px;
         line-height: 1.3;
         word-spacing: 1px;
+    }
+`
+
+const ArticleWrapper = styled.section`
+    display: flex;
+    flex-direction: column;
+    width: 57%;
+    margin-top: 40px;
+    margin: 40px auto 16px auto; 
+    @media(max-width: 768px) {
+        width: 95%;
+    }
+`
+
+const Content = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: #1c1c1c;
+    font-size: 19px;
+    line-height: 1.7;
+    margin-top: 32px;
+    letter-spacing: -0.4px;
+
+    & > h2, h3 {
+        margin: 16px 0;
+        text-align: center;
+    }
+
+    & > h2 {
+        font-size: 37px;
+    }
+
+    & > h3 {
+        font-size: 28px;
+    }
+
+    & > p {
+        margin-bottom: 24px;
+    }
+
+    & ul li {
+        margin-top: 20px;
+    }
+
+    & > p a {
+        color: #34d399;
+    }
+
+    @media(max-width: 768px) {
+        font-size: 16.5px;
+        & > h2 {
+            font-size: 26px;
+            line-height: 1.2;
+        }
+        & > h2 {
+            font-size: 20px;
+            line-height: 1.2;
+        }
     }
 `

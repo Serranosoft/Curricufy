@@ -4,19 +4,21 @@ import styled from '@emotion/styled';
 
 function CvTemplate({ emoji, title, descr, slug }) {
     return (
-        <Link href={`/curriculums/${slug}`}>
-            <CvWrapper>
-                <CvEmoji>
-                    {emoji}
-                </CvEmoji>
-                <CvTitle>
-                    {title}
-                </CvTitle>
-                <CvDescr>
-                    {descr}
-                </CvDescr>
-            </CvWrapper>
-        </Link>
+        <CvWrapper>
+            <Link href={`/curriculums/${slug}`} passHref>
+                <a>
+                    <CvEmoji>
+                        {emoji}
+                    </CvEmoji>
+                    <CvTitle>
+                        {title}
+                    </CvTitle>
+                    <CvDescr>
+                        {descr}
+                    </CvDescr>
+                </a>
+            </Link>
+        </CvWrapper>
     )
 }
 
@@ -24,12 +26,16 @@ const CvWrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 8px 16px;
     border: 1px solid lightgray;
     border-radius: 7px;
     box-shadow: 0 0 10px gray;
     transition: 1s;
     background-color: white;
+    & > a {
+        display: block;
+        height: 100%;
+        padding: 8px 16px;
+    }
     &:hover {
         transform: scale(1.06);
         cursor: pointer;

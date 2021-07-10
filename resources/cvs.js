@@ -15,14 +15,14 @@
 
 
 const cvs = [
-    {
+    /* {
         id: 1,
         slug: "vitae-normal",
         title: "Currículum Vitae General",
         emoji: "🧑",
         descr: "Currículum vitae general con todas las secciones básicas para postular y aplicar en cualquier trabajo",
         sections: [1, 3, 4, 5, 7]
-    },
+    }, */
     {
         id: 2,
         slug: "para-maestro",

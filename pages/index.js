@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import Link from "next/link"
 import styled from '@emotion/styled';
+
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Plantillas de Currículum Vitae Elegantes y Personalizables para Rellenar y Descargar Online | Curricufy</title>
+        <title>Curricufy | Plantillas de Currículums Elegantes y Personalizables para Rellenar y Descargar Online</title>
         <meta name="description" content="Rellena y personaliza currículums online para cualquier tipo de empleo con una estructura elegante, moderna y diferente a todos los demás." />
         <link rel="icon" href="/curricufy.ico" />
 
@@ -22,13 +23,11 @@ export default function Home() {
         <meta property="og:url" content="https://curricufy.com/" />
         <meta property="og:type" content="website" />
 
-
-
       </Head>
       <HeroWrapper>
         <HomeTitle>Crea un CV y encuentra empleo fácil y rápido 📝</HomeTitle>
         <HomeSubtitle>Electricista ⚡ | Cocinero 👨‍🍳 | Profesor 👩‍🏫 | Estudiante 👨‍🎓 | Obrero 👷 | Programador 💻</HomeSubtitle>
-        <Link href="/curriculums"><HeroButton>Elegir y rellenar mi CV</HeroButton></Link>
+        <HeroButton><Link href="/curriculums" passHref><a>Elegir y rellenar mi CV</a></Link></HeroButton>
       </HeroWrapper>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
         <path fill="#a96da3" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,149.3C320,139,400,85,480,80C560,75,640,117,720,133.3C800,149,880,139,960,122.7C1040,107,1120,85,1200,96C1280,107,1360,149,1400,170.7L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
@@ -60,7 +59,7 @@ export default function Home() {
               Indica de una manera clara las habilidades, aptitudes, experiencia laboral y el contenido que si se valora en una entrevista de trabajo.</LandingInfoBoxDescr>
           </LandingInfoBox>
         </LandingInfoWrapper>
-        <Link href="/curriculums"><LandingInfoBoxButton>Rellenar mi currículum</LandingInfoBoxButton></Link>
+        <LandingInfoBoxButton><Link href="/curriculums" passHref><a>Rellenar mi currículum</a></Link></LandingInfoBoxButton>
 
       </HomeSection>
     </>
@@ -105,8 +104,8 @@ const HomeSubtitle = styled.p`
 `
 
 const HeroButton = styled.button`
+    display: block;
     width: 25%;
-    padding: 16px 24px;
     margin: 32px auto 0px auto;
     font-size: 17px;
     text-align: center;
@@ -118,6 +117,10 @@ const HeroButton = styled.button`
     cursor: pointer;
     &:hover {
         transform: scale(0.95);
+    }
+    & > a {
+      display: block;
+      padding: 16px 24px;
     }
     @media(max-width: 920px) {
       width: 75%;
@@ -208,7 +211,6 @@ const LandingInfoBoxDescr = styled.span`
 const LandingInfoBoxButton = styled.button`
   display: block;
   width: 30%;
-  padding: 20px 16px;
   margin: 24px auto;
   background: #a96da3;
   font-size: 17px;
@@ -221,6 +223,10 @@ const LandingInfoBoxButton = styled.button`
   font-weight: bold;
   &:hover {
       transform: scale(0.95);
+  }
+  & > a {
+    display: block;
+    padding: 20px 16px;
   }
   @media(max-width: 920px) {
     width: 75%;
