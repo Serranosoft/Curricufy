@@ -197,7 +197,7 @@ const cvs = [
         slug: "para-escritor",
         title: "Currículum para Escritor/a",
         emoji: "📚🖊️",
-        descr: "qweqweqw eqweqweqweqw qweqweqwe qweqweqwe rwetwet",
+        descr: "qweqweq eqweqweqweqw qweqweqwe qweqweqwe rwetwet",
         sections: [1, 3, 4, 5, 7]
     },
     {
