@@ -49,8 +49,8 @@ export default function Home() {
         <LandingInfoWrapper>
           <LandingInfoBox>
             <LandingInfoBoxTitle>Diseños elegantes y llamativos</LandingInfoBoxTitle>
-            <LandingInfoBoxDescr>Rellena y <H1>personaliza una plantilla de currículum online y rápido para el empleo al que quieres
-              postular</H1> o echar tu cv.<br /><br />
+            <LandingInfoBoxDescr>Rellena y <H1>crea una plantilla de currículum online</H1> y rápido para el empleo al que quieres
+              postular o echar tu cv.<br /><br />
               Utiliza nuestras atractivas plantillas adaptadas a los procesos
               online, creativos y con formato europeo.</LandingInfoBoxDescr>
           </LandingInfoBox>
@@ -64,9 +64,9 @@ export default function Home() {
         <GalleryWrapper>
           <H2>PLANTILLAS DE CV</H2>
           <div>
-            <BigImg src="/images/decoration/CV.jpeg" alt="Ejemplo de curriculum creativo" />
-            <BigImg src="/images/decoration/CV2.jpeg" alt="Ejemplo de cv moderno" />
-            <BigImg src="/images/decoration/CV3.jpeg" alt="Ejemplo de plantilla de cv simple" />
+            <BigImg src="/images/decoration/CV(1)(1).webp" alt="Ejemplo de curriculum creativo" />
+            <BigImg src="/images/decoration/CV(2)(1).webp" alt="Ejemplo de cv moderno" />
+            <BigImg src="/images/decoration/CV(3)(1).webp" alt="Ejemplo de plantilla de cv simple" />
           </div>
         </GalleryWrapper>
         <FullWidthSection>
@@ -229,7 +229,7 @@ const LandingInfoBox = styled.div`
   }
 `
 
-const LandingInfoBoxTitle = styled.h2`
+const LandingInfoBoxTitle = styled.p`
   margin: 16px 0;
   color: #242424;
   font-size: 28px;

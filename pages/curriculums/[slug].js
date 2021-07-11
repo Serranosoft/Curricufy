@@ -7,6 +7,7 @@ import DisplayCv from "../../components/DisplayCv";
 import cvs from '../../resources/cvs';
 import { getPostBySlug } from '../../lib/api'
 import { getAllSlugs } from '../../lib/api'
+import CvTemplate from '../../components/cvTemplate';
 
 function createCv(props) {
 
@@ -82,6 +83,7 @@ function createCv(props) {
         }
     };
     const metaDataDescription = `Rellena y echa tu ${props.cvs.title} y encuentra empleo con un modelo elegante y bien estructurado`;
+
     return (
         <>
             <Head>
@@ -90,11 +92,12 @@ function createCv(props) {
                 <link rel="icon" href="/curricufy.ico" />
             </Head>
             <HeroWrapper>
-                <HomeTitle>Rellena tu {props.cvs.title} {props.cvs.emoji}</HomeTitle>
+                <HomeTitle>Crea tu {props.cvs.title} {props.cvs.emoji}</HomeTitle>
             </HeroWrapper>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 190">
                 <path fill="#a96da3" fill-opacity="1" d="M0,96L40,112C80,128,160,160,240,149.3C320,139,400,85,480,80C560,75,640,117,720,133.3C800,149,880,139,960,122.7C1040,107,1120,85,1200,96C1280,107,1360,149,1400,170.7L1440,192L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z"></path>
             </svg>
+            <SubtitleSections><Link href="/curriculums" passHref><a>« Ver todos los currículums disponibles</a></Link></SubtitleSections>
             <CreateCvWrapper>
                 <FormContainer
                     setValues={setValues}
@@ -106,9 +109,25 @@ function createCv(props) {
             <ArticleWrapper>
                 <Content dangerouslySetInnerHTML={{ __html: props.post.content}} />
             </ArticleWrapper>
+            <CvsGrid>
+                {GetRandomCvs().map((el) => {
+                    return <CvTemplate key={el.id} emoji={el.emoji} title={el.title} descr={el.descr} slug={el.slug} />
+                })}
+            </CvsGrid>
         </>
     )
 }
+
+function GetRandomCvs() {
+    let randomCvs = [];
+    let randomNumber = Math.floor(Math.random() * (40 - 2) +2);
+    for(let i = randomNumber; i>randomNumber-3; i--) {
+        randomCvs.push(cvs[i])
+    }
+    return randomCvs;
+}
+
+
 
 export const getStaticPaths = async () => {
 
@@ -138,7 +157,7 @@ const CreateCvWrapper = styled.div`
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     justify-content: center;
-    margin: 0px auto 32px auto;
+    margin: 16px auto 32px auto;
     gap: 16px;
     background: #dbdbdb;
     @media(max-width: 920px) {
@@ -226,4 +245,25 @@ const Content = styled.div`
             line-height: 1.2;
         }
     }
+`
+
+const SubtitleSections = styled.span`
+  word-spacing: 1px;
+  font-size: 17px;
+  color: #242424;
+  text-align: left;
+  margin-left: 40px;
+  margin-top: 0;
+  &:hover {
+      cursor: pointer;
+      text-decoration: underline;
+  }
+`
+
+const CvsGrid = styled.div`
+    width: 85%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 50px;
+    margin: 0px auto 24px auto;
 `

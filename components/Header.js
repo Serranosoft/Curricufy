@@ -45,6 +45,7 @@ const HeaderTitle = styled.span`
 
 const Logo = styled.img`
   width: 55px;
+  height: 55px;
   cursor: pointer;
 
 `
