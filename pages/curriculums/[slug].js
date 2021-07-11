@@ -82,7 +82,7 @@ function createCv(props) {
             onUpdate({ [name]: newValue });
         }
     };
-    const metaDataDescription = `Rellena y echa tu ${props.cvs.title} y encuentra empleo con un modelo elegante y bien estructurado`;
+    const metaDataDescription = `Crea y echa tu ${props.cvs.title} y encuentra empleo con un modelo elegante y bien estructurado`;
 
     return (
         <>
